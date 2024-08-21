@@ -43,20 +43,20 @@ export function AboutPlugin({
     <div className={styles.aboutPlugin}>
       <h4 className={styles.title}>About this plugin</h4>
       <div className={styles.items}>
-        {contributor[0] && contributor[0]?.author_name && (
+        {contributor && contributor[0] && contributor[0]?.author_name && (
           <div>
             <span className={styles.label}>Author:</span>
             {` `}
             <span
               onClick={() =>
                 router.push(
-                  `/wordpress-plugins/profiles/${contributor[0] && contributor[0]?.slug}`,
+                  `/wordpress-plugins/profiles/${contributor && contributor[0] && contributor[0]?.slug}`,
                 )
               }
               className={classNames(styles.value, styles.underline)}
               style={{ cursor: 'pointer' }}
             >
-              {contributor[0] && contributor[0]?.author_name}
+              {contributor && contributor[0] && contributor[0]?.author_name}
             </span>
           </div>
         )}

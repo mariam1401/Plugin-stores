@@ -38,7 +38,9 @@ export const usePluginTagList = ({ query }: { query?: string }) => {
     getPluginsTags({ search: query })
       .then((response) => {
         if (isMountedRef.current) {
-          setData(response);
+          if (response) {
+            setData(response);
+          }
         }
       })
       .catch((error) => {

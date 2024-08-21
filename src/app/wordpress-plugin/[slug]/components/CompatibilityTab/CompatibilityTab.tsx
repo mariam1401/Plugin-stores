@@ -52,8 +52,8 @@ export function CompatibilityTab({ plugin }: { plugin: IPlugin }) {
           )}
           <ul className={styles.ul}>
             {plugin?.external_integration_capabilities?.descriptions?.map(
-              (el) => {
-                return <li key={Math.random()}>{el}</li>;
+              (el, i) => {
+                return <li key={i}>{el}</li>;
               },
             )}
           </ul>

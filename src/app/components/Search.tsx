@@ -223,18 +223,20 @@ export default function Search({
                       <div className={styles.tags}>
                         {tag?.data
                           ?.slice(0, 10)
-                          ?.map((el: { slug: string; tag: string }) => {
-                            return (
-                              <button
-                                onClick={() => redirectToTag(el?.slug)}
-                                key={Math.random()}
-                              >
-                                #
-                                {el?.tag[0]?.toUpperCase() +
-                                  el?.tag?.substring(1)}
-                              </button>
-                            );
-                          })}
+                          ?.map(
+                            (el: { slug: string; tag: string }, i: number) => {
+                              return (
+                                <button
+                                  onClick={() => redirectToTag(el?.slug)}
+                                  key={i}
+                                >
+                                  #
+                                  {el?.tag[0]?.toUpperCase() +
+                                    el?.tag?.substring(1)}
+                                </button>
+                              );
+                            },
+                          )}
                       </div>
                     )}
                   </div>

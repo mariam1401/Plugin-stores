@@ -74,11 +74,12 @@ export default async function Post({
   );
 }
 export const revalidate = 60;
-
 export async function generateStaticParams() {
   const contributors = await getAllContributorsSlugs();
-
+  if (!contributors) {
+    return [];
+  }
   return contributors?.map((el: { slug: string }) => ({
-    slug: el?.toString(),
+    slug: el?.slug?.toString(),
   }));
 }
