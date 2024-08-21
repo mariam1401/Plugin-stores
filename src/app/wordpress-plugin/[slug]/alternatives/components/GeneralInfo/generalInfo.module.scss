@@ -1,0 +1,196 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+}
+
+.leftInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 580px;
+  gap: 20px;
+
+    .pluginInfo {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      border: 1px solid #EAEAEA;
+      border-radius: 6px;
+      padding: 20px;
+      margin-bottom: 20px;
+
+    .item{
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      width: 100%;
+
+      .logo {
+        height: 60px;
+        width: 60px;
+        min-height: 60px;
+        min-width: 60px;
+      }
+
+      .name {
+        font-weight: 700;
+        font-size: 20px;
+        //line-height: 30px;
+        margin-bottom: 8px;
+      }
+
+      .info {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        .rating {
+          display: flex;
+          gap: 6px;
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 22px;
+          align-items: center;
+        }
+
+        .downloads {
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 22px;
+          color: black;
+          display: flex;
+          align-items: center;
+          gap: 2px;
+        }
+
+        .category {
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 22px;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    }
+}
+
+.oneLineEllipsis {
+  /* Required for text overflow */
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* Additional styles for appearance */
+  max-height: 3em; /* Adjust based on line height */
+  line-height: 1.5; /* Adjust based on line height */
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.learnMore {
+  background: transparent;
+  width: fit-content;
+  border: none;
+  text-decoration: underline;
+  font-size: 14px;
+  line-height: 22px;
+  margin-left: auto;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.intro {
+  font-weight: 800;
+  font-size: 42px;
+  line-height: 62px;
+  .pluginName {
+    color: #3339f0;
+  }
+}
+
+.pluginDescription {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 34px;
+}
+
+.coverPhoto {
+  object-fit: cover;
+  max-width: 520px;
+  height: 323px;
+  align-self: flex-start;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 1260px){
+  .container{
+    flex-flow: column;
+    gap: 60px;
+  }
+  .coverPhoto{
+    max-width: 100%;
+    width: 100%;
+  }
+
+}
+
+@media screen  and (max-width: 768px){
+  .leftInfo{
+    width: 100%;
+    min-width: 100%;
+    h1{
+      font-size: 26px;
+      line-height: 40px;
+    }
+    .pluginInfo{
+      flex-flow: column;
+      gap: 16px;
+      .item{
+        display: flex;
+        gap: 20px;
+        .logo{
+          width: 50px;
+          height: 50px;
+          min-height: 50px;
+          min-width: 50px;
+        }
+        .infoSection{
+          .name{
+            font-size: 16px;
+          }
+        }
+        .info{
+          flex-wrap: wrap;
+          gap: 8px;
+          .rating, .downloads, .category{
+            font-size: 14px;
+          }
+        }
+      }
+
+
+    }
+  }
+  .pluginDescription{
+    font-size: 18px;
+    line-height: 32px;
+  }
+  .coverPhoto{
+    height: 208px;
+  }
+  .container{
+    gap: 30px;
+  }
+  .learnMore{
+    margin-top: -40px;
+  }
+}

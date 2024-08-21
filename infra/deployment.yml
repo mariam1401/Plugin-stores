@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: next-js
+  name: nextjs
+  labels:
+    app: nextjs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nextjs
+      tier: web
+  template:
+    metadata:
+      labels:
+        app: nextjs
+        tier: web
+    spec:
+      nodeSelector:
+        cloud.google.com/gke-nodepool: next-pool
+      containers:
+      - name: nextjs-app
+        image: us-east1-docker.pkg.dev/programmatic-seo-417607/plugin-store-front-next-js/nextjs:ccf58f15
+        resources:
+          requests:
+            memory: "5Gi"
+            cpu: "2000m"
+          limits:
+            memory: "6Gi"
+            cpu: "2000m"
+        ports:
+        - containerPort: 3000
+        volumeMounts:
+         - name: nextjs-data
+           mountPath: /app/.next
+      volumes:
+      - name: nextjs-data
+        persistentVolumeClaim:
+            claimName: nextjs-pvc

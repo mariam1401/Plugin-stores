@@ -1,0 +1,290 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  min-width: 100%;
+  justify-content: space-between;
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+    width: 60%;
+    max-width: 460px;
+
+    .logoInfo {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+
+      .logo {
+        width: 72px;
+        height: 72px;
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+
+        .pName {
+          font-weight: 700;
+          font-size: 22px;
+          line-height: 33px;
+          white-space: pre-line;
+        }
+
+        .pSlug {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+
+  &.full {
+    justify-content: center;
+  }
+  .right {
+    width: 70%;
+    display: grid;
+    height: 362px;
+
+    iframe {
+      height: 100%;
+      width: calc(100% - 100px);
+      border-radius: 10px;
+    }
+
+    img {
+      height: 362px;
+      max-height: 362px;
+      object-fit: scale-down;
+      width: calc(100% - 100px);
+      border-radius: 10px;
+      justify-self: center;
+      border: 1px solid lightgray;
+    }
+  }
+}
+
+.tag {
+  background: #F5F5F7;
+  border-radius: 16px;
+  padding: 4px 8px;
+  display: inline-block;
+  width: fit-content;
+  font-size: 10px;
+  line-height: 16px;
+}
+
+.pluginInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+
+  .pluginInfoBox {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+
+    .rating {
+      display: flex;
+      gap: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 22px;
+      margin-right: 6px;
+      align-items: center;
+    }
+    .ratingText {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  .separator {
+    width: 1px;
+    height: 30px;
+    background-color: #EAEAEA;
+  }
+}
+
+.actionsRow {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+
+  .action {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 14px 24px;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    &:hover {
+      background-color: #333333;
+      cursor: pointer;
+    }
+  }
+
+  .action2 {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    background-color: #EAEAEA;
+    color: black;
+    padding: 14px 24px;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    &:hover {
+      background-color: #eeeeee;
+      cursor: pointer;
+    }
+  }
+}
+
+.header{
+  display: flex;
+  grid-column-gap: 10px;
+  align-items: center;
+  font-size: 14px;
+
+  span{
+    color: #00000080;
+
+  }
+}
+.p{
+  color: #000000B2;
+  font-size: 16px;
+  line-height: 26px;
+
+}
+.div{
+  display: flex;
+  flex-flow: column;
+  grid-row-gap: 10px;
+}
+@media screen  and (max-width: 1260px){
+  .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    .right{
+      width: 100%;
+      height: 100%;
+      iframe{
+        width: 100%;
+      }
+      img{
+        width: 100%;
+      }
+    }
+    .left{
+      width: 100%;
+      max-width: 100%;
+      .logoInfo{
+        .info{
+          .pName{
+            font-size: 20px;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+  }
+.pluginInfo{
+  justify-content: space-evenly;
+}
+  .header{
+    font-size: 14px;
+  }
+  .p{
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .image, .video{
+    height: 300px;
+    border-radius: 10px;
+    border: 1px solid #EAEAEA;
+    width: 100%;
+  }
+
+
+}
+@media screen  and (max-width: 768px){
+  .container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    .right{
+      width: 100%;
+      height: 100%;
+      iframe{
+        width: 100%;
+      }
+      img{
+        width: 100%;
+      }
+    }
+    .left{
+      width: 100%;
+      max-width: 100%;
+      .logoInfo{
+        .info{
+          .pName{
+            font-size: 20px;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+  }
+  .pluginInfo{
+    justify-content: space-evenly;
+    .pluginInfoBox{
+        .ratingText{
+          font-size: 12px;
+      }
+      .rating{
+        font-size: 14px;
+      }
+    }
+
+
+  }
+  .header{
+    font-size: 14px;
+  }
+  .p{
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .link{
+    font-size: 14px;
+  }
+  .actionsRow{
+    flex-flow: column;
+    gap: 14px;
+  }
+
+}

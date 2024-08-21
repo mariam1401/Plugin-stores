@@ -1,0 +1,189 @@
+.container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .text {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+    align-items: center;
+    display: flex;
+    gap: 12px;
+    span{
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    svg {
+      min-width: fit-content;
+    }
+  }
+}
+
+.inputSection {
+  width: 100%;
+  height: 76px;
+  position: relative;
+
+  input {
+    background-color: rgba(234, 234, 234, 0.5);
+    border: 1px solid rgba(234, 234, 234, 0.5);
+    width: 100%;
+    height: 76px;
+    padding: 15px 76px;
+    border-radius: 10px;
+    font-size: 18px;
+    &:hover {
+      background-color: rgba(234, 234, 234, 0.7);
+      border: 1px solid rgba(234, 234, 234, 0.7);
+    }
+    &:focus {
+      background-color: white;
+      border: 1px solid black;
+      outline: none;
+    }
+  }
+
+  .legoIcon {
+    font-size: 16px;
+    position: absolute;
+    left: 30px;
+    top: 20px;
+  }
+
+  .rightIcon {
+    position: absolute;
+    right: 100px;
+    top: 26px;
+    cursor: pointer;
+  }
+
+  .searchIcon {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    cursor: pointer;
+  }
+}
+
+.loader {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top: 3px solid black;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.section{
+  display: flex;
+  flex-flow: column;
+  gap: 12px;
+
+  .p{
+    font-size: 16px;
+    line-height: 22px;
+    color:#0000004D
+  }
+}
+.tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  button{
+    background: white;
+    border-radius: 4px;
+    border: 1px solid #EAEAEA;
+    padding: 8px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+
+  }
+}
+.tags button:active,
+.tags button:focus,
+.tags button.selected {
+  color: #3339F1;
+  background: #EAEAEA;
+
+}
+@media screen  and (max-width: 768px){
+  .container {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .text {
+      font-size: 16px;
+      flex-flow: column;
+      line-height: 30px;
+      font-weight: 600;
+      align-items: flex-start;
+      display: flex;
+      gap: 8px;
+      span{
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      svg {
+        min-width: fit-content;
+      }
+    }
+  }
+  .inputSection {
+    input {
+      padding: 15px 56px;
+      font-size: 12px;
+      height: 60px;
+    }
+
+    .legoIcon {
+      font-size: 16px;
+      position: absolute;
+      left: 16px;
+      top: 10px;
+    }
+
+    .rightIcon {
+      position: absolute;
+      right: 100px;
+      top: 20px;
+      cursor: pointer;
+    }
+
+    .searchIcon {
+      position: absolute;
+      right: 6px;
+      top: 6px;
+      cursor: pointer;
+      background: #EAEAEA;
+
+
+    }
+  }
+  .section{
+    .p{
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+  .tags{
+    gap: 8px;
+    button{
+      font-size: 12px;
+      padding: 4px 5px;
+    }
+  }
+
+}

@@ -1,0 +1,259 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  color: white;
+
+  button {
+    color: white;
+    svg {
+      path {
+        fill: white;
+      }
+    }
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    .texts {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 90%;
+      h2 {
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 60px;
+      }
+
+      .description {
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 34px
+      }
+    }
+
+    .seeAll {
+      background: transparent;
+      border: none;
+      text-decoration: underline;
+      display: flex;
+      gap: 4px;
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+      bottom: 8px;
+    }
+  }
+
+  .pluginsList {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    .plugin {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      max-width: 560px;
+      min-width: 560px;
+    }
+  }
+}
+
+.eachColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: auto;
+}
+
+.winner {
+  display: flex;
+  flex-direction: column;
+  background-color: #3339F1;
+  justify-content: space-between;
+  padding: 45px 50px;
+  color: white;
+  min-height: 436px;
+  border-radius: 6px;
+  gap: 20px;
+
+  .winnerSection {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 10px 10px 10px 20px;
+    border-radius: 50px;
+    height: 64px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    width: fit-content;
+    .win{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .winnerName {
+      background-color: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      border-radius: 40px;
+      padding: 8px 14px;
+
+
+      svg {
+        min-width: 4px;
+        path, circle {
+          fill: white;
+        }
+      }
+
+      .logo {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+  }
+
+  .shortTitle {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 40px;
+    margin-bottom: 10px;
+  }
+
+  .learnMore {
+    background: transparent;
+    width: fit-content;
+    border: none;
+    text-decoration: underline;
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+
+.twoLineEllipsis {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 3em;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 1260px){
+  .container {
+    .header {
+      justify-content: space-between;
+      flex-flow: column;
+      grid-row-gap: 30px;
+      .texts{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 90%;
+      }
+      .seeAll {
+        position: relative;
+      }
+    }
+    .pluginsList {
+      flex-flow: column-reverse;
+    }
+  }
+  .winner {
+    padding: 50px 30px;
+  }
+  .eachColumn {
+    a{
+      max-width: 100% !important;
+    }
+  }
+}
+@media screen and (max-width: 768px){
+  .container {
+    margin-top: -40px;
+    .header {
+      flex-flow: column;
+      gap: 30px;
+      .texts {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 90%;
+        h2 {
+          font-size: 24px;
+          line-height: 40px;
+        }
+        .description {
+          font-size: 18px;
+          line-height: 28px
+        }
+      }
+      .seeAll {
+        position: relative;
+      }
+    }
+    .pluginsList {
+      flex-flow: column-reverse;
+      .plugin {
+        gap: 24px;
+        max-width: 100%;
+        min-width: 100%;
+      }
+    }
+  }
+  .winner {
+    padding: 30px 20px;
+    max-height: 100%;
+    .winnerSection {
+      background-color: transparent;
+      padding:0;
+      border-radius: 50px;
+      height: 64px;
+      display: flex;
+      flex-flow: column;
+      font-size: 14px;
+      align-items: flex-start;
+      .win{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .winnerName {
+        width: max-content;
+      }
+    }
+    .shortTitle {
+      font-size: 18px;
+      line-height: 32px;
+    }
+    .learnMore {
+      font-size: 16px;
+      line-height: 32px;
+    }
+  }
+  .eachColumn {
+    a{
+      max-width: 100% !important;
+    }
+  }
+}

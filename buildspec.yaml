@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing Serverless...
+      - npm install sst@two --save-exact
+
+  pre_build:
+    commands:
+      - echo Installing source npm dependencies...
+      - npm install
+
+  build:
+    commands:
+      - echo Deployment stated on - `date`
+      - npx sst deploy --stage $STAGE
+
+  post_build:
+    commands:
+      - echo Deployment completed on - `date`

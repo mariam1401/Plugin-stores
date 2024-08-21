@@ -1,0 +1,50 @@
+.mainBenefits {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #EAEAEA;
+  margin-bottom: 30px;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  white-space: pre-line;
+}
+
+.item {
+  display: flex;
+  gap: 8px;
+}
+
+.info {
+  flex: 1;
+}
+@media screen  and (max-width: 1260px){
+  .mainBenefits{
+    border:none;
+    margin: 0 0 40px 0;
+    padding: 0;
+
+  }
+
+}
+@media screen  and (max-width: 768px){
+ .title{
+   font-size: 18px;
+   line-height: 32px;
+   margin-bottom: 10px;
+ }
+  .info{
+    font-size: 14px;
+  }
+  .items{
+    gap: 10px;
+  }
+}

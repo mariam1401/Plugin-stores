@@ -1,0 +1,36 @@
+.ctn{
+  display: flex;
+  flex-flow: column;
+  grid-row-gap: 30px;
+  margin-bottom: 40px;
+
+  h2{
+    font-size: 34px;
+    line-height: 52px;
+    font-weight: 700;
+  }
+
+
+}
+.developers{
+  display: flex;
+  flex-wrap: wrap;
+  grid-column-gap: 40px;
+  grid-row-gap: 20px;
+
+  div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    grid-column-gap: 8px;
+
+    img{
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+    }
+  }
+}
+.header{
+  font-size: 20px;
+}

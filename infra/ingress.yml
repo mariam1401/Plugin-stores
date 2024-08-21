@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: next-js
+  name: nextjs
+  annotations:
+    kubernetes.io/ingress.allow-http: "true"
+    kubernetes.io/ingress.class: "gce"
+  labels:
+    app: nextjs
+spec:
+  defaultBackend:
+    service:
+      name: nextjs-backend
+      port:
+        number: 8080
+

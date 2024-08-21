@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: next-js
+  name: nextjs-backend
+  labels:
+    app: nextjs
+spec:
+  type: LoadBalancer
+  selector:
+    app: nextjs
+    tier: web
+  ports:
+  - port: 80
+    targetPort: 3000

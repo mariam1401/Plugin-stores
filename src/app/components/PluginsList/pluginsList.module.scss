@@ -1,0 +1,103 @@
+.plugins {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  row-gap: 16px;
+
+  .eachPlugin {
+    width: 340px;
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    max-height: 92px;
+    overflow: hidden;
+    text-decoration: none;
+    padding: 14px 16px;
+    border-radius: 6px;
+
+    .logo {
+      min-width: 20px;
+    }
+    .pluginInfo {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 400;
+      width: 90%;
+
+      .titleRow {
+        display: flex;
+        padding-right: 30px;
+        gap: 10px;
+
+        .title {
+          font-weight: 700;
+          /* Required for text overflow */
+          display: -webkit-box;
+          -webkit-line-clamp: 1; /* Limit to 2 lines */
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          /* Additional styles for appearance */
+          max-height: 3em; /* Adjust based on line height */
+          line-height: 1.5; /* Adjust based on line height */
+        }
+
+        .icon {
+          display: none;
+          margin-left: auto;
+        }
+      }
+
+      .description {
+        /* Required for text overflow */
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Limit to 2 lines */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /* Additional styles for appearance */
+        max-height: 3em; /* Adjust based on line height */
+        line-height: 1.5; /* Adjust based on line height */
+        padding-right: 20px;
+      }
+    }
+
+    &:hover {
+      background-color: #F5F5F7;
+      .logo {
+        g {
+          stroke: #3339F1;
+        }
+      }
+      .pluginInfo {
+        .titleRow {
+          padding-right: 0;
+          .title {
+            color: #3339F1;
+          }
+          .icon {
+            display: block;
+            min-width: 20px;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.overlayLoading {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  left: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+}
+

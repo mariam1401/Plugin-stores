@@ -1,0 +1,273 @@
+.container{
+  display: flex;
+  flex-flow: column;
+  grid-row-gap: 60px;
+  margin-bottom: 80px;
+}
+.header{
+  font-size: 42px;
+  text-align: center;
+  line-height: 62px;
+  padding: 0 40px;
+  font-weight: 800;
+}
+.list{
+  display: flex;
+  flex-flow: column;
+  grid-row-gap: 30px;
+}
+.title_ctn{
+  display: flex;
+  grid-column-gap: 12px;
+  color: black;
+  font-weight: 700;
+  font-size: 22px;
+}
+.title_ctn_slide{
+  position: absolute;
+  display: flex;
+  grid-column-gap: 12px;
+  color: black;
+  font-weight: 700;
+  font-size: 22px;
+}
+.layer{
+  height: 100%;
+  width: 100px;
+  background: red;
+  position: absolute;
+}
+.price_list{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  justify-content: center;
+  gap: 16px;
+}
+.item{
+  width: 100%;
+  height: 100%;
+  padding: 24px 20px;
+  display: flex;
+  flex-flow: column;
+  grid-row-gap: 20px;
+  border-radius: 6px;
+  border: 1px solid #EAEAEA
+}
+.price_name {
+  padding: 5px 12px;
+  width: fit-content;
+  background: rgba(51, 57, 241, 0.1);
+  border-radius: 6px;
+  color: #3339F1;
+  font-size: 14px;
+  font-weight: 700;
+}
+.price_ctn{
+  display: flex;
+  align-items: end;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 14px;
+}
+.price_ctn>h3{
+  font-size: 42px;
+  color: black;
+}
+.price_ctn>span{
+  margin-bottom: 5px;
+}
+.line{
+  width: 100%;
+  height: 1px;
+  background: rgba(234, 234, 234, 1);
+}
+.features_ctn{
+  display: flex;
+  flex-flow: column;
+  grid-row-gap: 16px;
+  justify-content: space-between;
+  height: 100%;
+
+  .ctn{
+    display: flex;
+    flex-flow: column;
+    gap: 18px;
+
+    .option{
+      display: flex;
+      flex-flow: column;
+      gap: 14px;
+    }
+  }
+
+}
+.features_ctn>div>h4{
+  font-size: 16px;
+  font-weight: 700;
+}
+.feature{
+  display: flex;
+  height: max-content;
+  grid-column-gap: 10px;
+  font-size: 14px;
+  line-height: 22px;
+}
+.info{
+  display: flex;
+  flex-flow: column;
+  grid-row-gap: 12px;
+  font-size: 16px;
+  line-height: 22px;
+}
+.info>a{
+  font-weight: 600;
+}
+.arrows{
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: end;
+  grid-column-gap: 20px;
+
+  button{
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border: 1px solid #e7e7e7;
+    cursor: pointer;
+  }
+}
+.prev{
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  font-size: 12px;
+  background: white!important;
+  border: 1px solid  #EAEAEA;
+  cursor: pointer;
+  transform: rotateY(180deg);
+}
+
+
+.back{
+  width: 194px;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  top: 30px;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+
+}
+.header_ctn{
+  display: flex;
+  flex-flow: column;
+  grid-row-gap: 20px;
+  justify-content: space-between;
+}
+.next{
+  width: 200px;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  top: 30px;
+  right: 0;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+  transform: rotate(180deg);
+}
+.buy_btn{
+  background: #3339F1;
+  padding: 14px 24px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 24px;
+  bottom: 0;
+}
+
+@media screen and (max-width: 1024px){
+  .price_ctn>h3{
+    font-size: 24px;
+    color: black;
+  }
+  .price_name_ctn{
+    display: flex;
+    justify-content: center;
+    grid-column-gap: 20px;
+    overflow-x: auto;
+  }
+  .price_name_ctn>span{
+    padding: 10px 0;
+    border-bottom: 2px solid transparent;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .price_list{
+    grid-template-columns: 1fr;
+  }
+  .back, .next{
+    display: none;
+  }
+  .types_ctn{
+    display: flex;
+    padding: 0 20px;
+    margin: 0 -20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 30px;
+    border-bottom: 1px solid #EAEAEA;
+    .btns{
+      display: flex;
+      width: max-content;
+      margin: 0 auto;
+      gap: 30px;
+      button{
+        padding: 10px 0 20px 0;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        line-height: 20px;
+        width: max-content;
+        font-weight: 700;
+        white-space: nowrap;
+        color: #00000080;
+
+      }
+    }
+
+
+  }
+  .types_ctn::-webkit-scrollbar {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    visibility: hidden;
+    display: none;
+  }
+  .types_ctn::-webkit-scrollbar-thumb {
+    background-color:transparent;
+
+  }
+  .arrows{
+    display: none;
+  }
+}
+@media screen and (max-width: 768px){
+  .price_name_ctn>span{
+    font-size: 14px;
+  }
+  .header{
+    font-size: 26px;
+    line-height: 40px;
+  }
+
+
+}

@@ -1,0 +1,221 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  .title {
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 60px;
+  }
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selectedPage {
+  background-color: black !important;
+  color: white !important;
+}
+
+.pluginInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  border: 1px solid #EAEAEA;
+  border-radius: 6px;
+  padding: 30px;
+  .item{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    .logo {
+      height: 60px;
+      width: 60px;
+      min-height: 60px;
+      min-width: 60px;
+      border-radius: 8px;
+    }
+
+    .infoSection {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+
+      .name {
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 8px;
+        min-height: 60px;
+      }
+
+      .info {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        .rating {
+          display: flex;
+          gap: 6px;
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 22px;
+          align-items: center;
+        }
+
+        .downloads {
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 22px;
+          color: black;
+          display: flex;
+          align-items: center;
+          gap: 2px;
+        }
+
+        .category {
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 22px;
+          text-decoration: underline;
+        }
+      }
+
+      .itemTitleRow {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 10px;
+
+        p {
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 22px;
+          color: rgba(0, 0, 0, 0.7);
+          max-width: 65%;
+        }
+      }
+    }
+  }
+
+
+
+}
+
+.learnMore {
+  width: fit-content;
+  border: none;
+  color: white;
+  font-size: 14px;
+  line-height: 22px;
+  text-decoration: none;
+  margin-left: auto;
+  min-width: 220px;
+  height: 50px;
+  padding: 14px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 6px;
+  background-color: #3339F1;
+}
+
+.twoLineEllipsis {
+  /* Required for text overflow */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* Additional styles for appearance */
+  max-height: 3em; /* Adjust based on line height */
+  line-height: 1.5; /* Adjust based on line height */
+}
+
+@media screen and (max-width: 1260px){
+  .pluginInfo{
+    .item{
+      .infoSection{
+        .itemTitleRow{
+          flex-flow: column;
+
+        }
+      }
+    }
+
+
+  }
+  .learnMore{
+    margin: 24px 0 0 0;
+    width: max-content;
+  }
+
+}
+
+@media screen  and (max-width: 768px){
+  .container{
+    gap: 40px;
+    .title{
+      font-size: 24px;
+      line-height: 40px;
+    }
+    .pluginInfo{
+      display: flex;
+      flex-flow: column;
+      padding: 20px;
+
+      .item{
+        display: flex;
+        gap: 20px;
+        .logo{
+          min-width: 50px;
+          min-height: 50px;
+          border-radius: 8px;
+          width: 50px;
+          height: 50px;
+        }
+        .infoSection{
+          .name{
+            font-size: 16px;
+            line-height: 20px;
+            min-height: max-content;
+          }
+        }
+        .info{
+          gap: 8px;
+          flex-wrap: wrap;
+          .rating,.downloads,.category{
+            font-size: 14px;
+          }
+
+        }
+      }
+
+    }
+  }
+  .shortTitle{
+    display: none;
+  }
+  .learnMore{
+    width: 100%;
+    min-width: 100%;
+    margin: 0;
+  }
+
+
+}

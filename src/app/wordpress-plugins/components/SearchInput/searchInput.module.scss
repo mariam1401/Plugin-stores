@@ -1,0 +1,320 @@
+.searchInput {
+  display: flex;
+  gap: 20px;
+  max-width: 692px;
+  width: 100%;
+
+  .inputSection {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    div{
+      input {
+        width: 100%;
+        height: 50px;
+        padding: 15px 40px;
+        border: 1px solid #EAEAEA;
+        border-radius: 6px;
+      }
+
+      .searchIcon {
+        font-size: 16px;
+        position: absolute;
+        left: 15px;
+        top: 17px;
+      }
+    }
+
+
+  }
+
+  .searchButton {
+    background-color: white;
+    border: 1px solid #EAEAEA;
+    border-radius: 6px;
+    display: flex;
+    gap: 10px;
+    min-width: 160px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+
+    &:hover {
+      background-color: #eeeeee;
+      cursor: pointer;
+    }
+  }
+}
+
+.loader {
+  width: 20px; /* Adjust the size of the loader */
+  height: 20px; /* Adjust the size of the loader */
+  border-radius: 50%; /* Creates a round shape */
+  border: 3px solid rgba(0, 0, 0, 0.1); /* Light gray border */
+  border-top: 3px solid black; /* black border for the loading indicator */
+  animation: spin 1s linear infinite; /* Animation to rotate the loader */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); } /* Start rotation from 0 degrees */
+  100% { transform: rotate(360deg); } /* Rotate to 360 degrees (full circle) */
+}
+
+.rightIcon {
+  position: absolute;
+  right: 16px;
+  top: 15px;
+  cursor: pointer;
+}
+
+.categorySelector {
+  position: absolute;
+  top: 78px;
+  width: 0;
+  background: white;
+  height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  transition: height 300ms ease;
+  overflow: hidden;
+  z-index: 1;
+
+  &.isOpened {
+    height: max-content;
+    width: 100%;
+    padding: 40px 20px;
+    border-bottom: 1px solid lightgray;
+  }
+
+  .categorySelectorContent {
+    width: 1140px;
+    height: 100%;
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+
+    .header {
+      font-weight: 500;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 24px;
+      column-gap: 20px;
+      justify-content: space-between;
+    }
+  }
+}
+
+.eachCategory {
+  display: flex;
+  flex-flow: column;
+  gap: 5px;
+  width: 245px;
+  cursor: pointer;
+
+
+  &.isSelected {
+    color: #3339F1;
+      g {
+        stroke: #3339F1;
+      }
+    }
+  }
+  .title {
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+.text{
+  font-size: 12px;
+}
+
+.resultSection {
+  position: absolute;
+  bottom: -326px;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #EAEAEA;
+  border-radius: 6px;
+  height: 316px;
+  overflow-y: auto;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+  z-index: 1;
+
+  .eachPluginLink {
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    text-decoration: none;
+    padding: 6px;
+    align-items: center;
+
+    .logo {
+      height: 36px;
+      width: 36px;
+      border: 1px solid #EAEAEA;
+      border-radius: 4px;
+    }
+    .pluginInfo {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 400;
+      width: 90%;
+
+      .title {
+        font-weight: 700;
+        /* Required for text overflow */
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* Limit to 2 lines */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /* Additional styles for appearance */
+        max-height: 3em; /* Adjust based on line height */
+        line-height: 1.5; /* Adjust based on line height */
+      }
+    }
+
+    &:hover {
+      background-color: #F5F5F7;
+      border-radius: 4px;
+      .pluginInfo {
+        .title {
+          color: #3339F1;
+        }
+      }
+    }
+  }
+
+}
+.tag{
+  text-overflow: ellipsis;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 6px;
+
+
+  &:hover{
+    background-color: #F5F5F7;
+  }
+}
+.image_ctn{
+  display: flex;
+  align-items: center;
+  grid-column-gap: 14px;
+
+}
+@media screen and (max-width: 1260px){
+  .searchInput {
+    display: flex;
+    gap: 12px;
+    max-width: max-content;
+    width: 100%;
+    .inputSection {
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      input {
+        width: 100%;
+        min-width: 600px;
+        height: 50px;
+        padding: 15px 5px;
+        font-size: 12px;
+        border: 1px solid #EAEAEA;
+        border-radius: 6px;
+      }
+
+      .searchIcon {
+        font-size: 16px;
+        position: absolute;
+        left: 15px;
+        top: 17px;
+      }
+    }
+
+    .searchButton {
+      min-width:50px;
+    }
+  }
+  .search{
+    height: 50px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid #EAEAEA;
+    border-radius: 6px;
+    display: flex;
+    gap: 10px;
+    min-width: 50px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+  }
+
+}
+@media screen and (max-width: 800px){
+  .searchInput {
+    .inputSection {
+      input {
+        min-width: 400px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px){
+  .searchInput {
+    .inputSection {
+      input {
+        min-width: 300px;
+      }
+    }
+  }
+  .resultSection{
+    .eachPluginLink{
+      height: max-content;
+      .logo{
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+  }
+
+
+  .title{
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 500px){
+  .searchInput {
+    .inputSection {
+      input {
+        min-width: 200px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 400px){
+  .searchInput {
+    .inputSection {
+      input {
+        min-width: 150px;
+      }
+    }
+  }
+}

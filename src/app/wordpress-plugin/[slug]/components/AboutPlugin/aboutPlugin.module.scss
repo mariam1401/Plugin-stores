@@ -1,0 +1,67 @@
+.title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.label {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+}
+
+.value {
+  color: rgba(0, 0, 0, 1);
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 12px;
+}
+
+.tag {
+  background: #F5F5F7;
+  border-radius: 3px;
+  padding: 8px 10px 8px 10px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.aboutPlugin {
+  :global {
+    #languageTooltip {
+      cursor: pointer;
+    }
+  }
+}
+@media screen and (max-width: 768px){
+  .title{
+    font-size: 18px;
+    line-height: 32px;
+    margin-bottom: 10px;
+  }
+  .label,.value, .tag{
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+}

@@ -1,0 +1,50 @@
+.ctn{
+  position: absolute;
+  z-index: 2;
+  background:white;
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #EAEAEA;
+
+  div{
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    span{
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+  }
+  input{
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #EAEAEA;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  input:hover{
+    border: 1px solid black;
+  }
+  input[type="checkbox"]:checked {
+    background-color: black;
+    border-color: black;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  input[type="checkbox"]:checked::after {
+    content: 'L';
+    color: white;
+    position: absolute;
+    transform: scaleX(-1) rotate(-45deg);
+
+  }
+}
