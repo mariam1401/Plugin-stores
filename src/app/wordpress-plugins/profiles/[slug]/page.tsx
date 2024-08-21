@@ -79,7 +79,7 @@ export async function generateStaticParams() {
   if (!contributors) {
     return [];
   }
-  return contributors?.map((el: { slug: string }) => ({
-    slug: el?.slug?.toString(),
+  return contributors?.map((el:string) => ({
+    slug: el?.toString(),
   }));
 }
