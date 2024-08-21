@@ -6,7 +6,7 @@ import { RetentionDays } from "aws-cdk-lib/aws-logs";
 export default {
   config(_input) {
     return {
-      name: "plugin-store-pages-dev",
+      name: "plugin-store-pages",
       region: "us-east-1",
     };
   },
