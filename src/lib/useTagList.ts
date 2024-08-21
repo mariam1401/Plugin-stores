@@ -26,7 +26,9 @@ export const useTagList = ({ query }: { query?: string }) => {
         page: 1,
       })
         .then((response) => {
-          setData(response);
+          if (response) {
+            setData(response);
+          }
         })
         .finally(() => {
           setIsLoading(false);

@@ -61,6 +61,9 @@ export default async function Post({
 export const revalidate = 60;
 export async function generateStaticParams() {
   const tags = await getTags({ limit: 5000000, page: 1 });
+  if (!tags) {
+    return [];
+  }
   return tags?.data?.map((tag: { slug: string }) => ({
     slug: tag?.slug?.toString(),
     tag: tag,

@@ -118,9 +118,9 @@ export function AddOns({ morePlugins, title }: IProps) {
             </button>
           </div>
           <SplideTrack>
-            {morePlugins?.data?.map((eachPlugin: any) => {
+            {morePlugins?.data?.map((eachPlugin: any, i) => {
               return (
-                <SplideSlide key={Math.random()}>
+                <SplideSlide key={i}>
                   <AddOn
                     downloads={eachPlugin?.active_installations}
                     category_name={eachPlugin?.category_name}

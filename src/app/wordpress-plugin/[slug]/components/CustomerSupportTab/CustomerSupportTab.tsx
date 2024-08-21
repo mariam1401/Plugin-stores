@@ -16,14 +16,26 @@ export function CustomerSupportTab({ plugin }: { plugin: IPlugin }) {
               {plugin?.types_of_support_provided?.types?.join(', ')}
             </p>
           </div>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: plugin?.types_of_support_provided?.summary || '',
-            }}
-            className={styles.description}
-          />
+          {typeof plugin?.types_of_support_provided?.summary === 'object' ? (
+            <div className={styles.description}>
+              {plugin?.types_of_support_provided?.summary &&
+                Object.values(plugin.types_of_support_provided.summary)?.map(
+                  (el) => {
+                    return el;
+                  },
+                )}
+            </div>
+          ) : (
+            <div
+              dangerouslySetInnerHTML={{
+                __html: plugin?.types_of_support_provided?.summary || '',
+              }}
+              className={styles.description}
+            />
+          )}
         </div>
       )}
+
       {plugin?.learning_resources && (
         <div>
           <h2 className={styles.title}>Learning resources</h2>

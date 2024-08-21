@@ -162,9 +162,9 @@ export function PriceList({ plugin }: { plugin: IPlugin }) {
               </button>
             </div>
             <SplideTrack>
-              {filteredPriceList?.map((el: any) => {
+              {filteredPriceList?.map((el: any, i) => {
                 return (
-                  <SplideSlide key={Math.random()}>
+                  <SplideSlide key={i}>
                     <PriceOption
                       length={filteredPriceList?.length || 0}
                       plugin={plugin}

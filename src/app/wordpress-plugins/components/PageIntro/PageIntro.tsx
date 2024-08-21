@@ -1,8 +1,6 @@
 'use client';
 import { useMediaQuery } from '@mui/material';
 
-import IntroIcon from './introIcon.svg';
-
 import styles from './pageIntro.module.scss';
 
 export const PageIntro = () => {
@@ -19,7 +17,7 @@ export const PageIntro = () => {
           all in one place.
         </p>
       </div>
-      {!smallScreen && <IntroIcon />}
+      {!smallScreen && <img src={'/introImage.png'} />}
     </div>
   );
 };

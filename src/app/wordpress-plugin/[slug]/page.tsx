@@ -133,6 +133,9 @@ export const revalidate = 60;
 
 export async function generateStaticParams() {
   const pluginSlugs = await getPostsForGeneration();
+  if (!pluginSlugs) {
+    return [];
+  }
   return pluginSlugs?.map((post: string) => ({
     slug: post?.toString(),
   }));

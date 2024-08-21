@@ -62,7 +62,9 @@ export const usePluginList = ({
           wp: wp,
         })
           .then((response) => {
-            setData(response);
+            if (response) {
+              setData(response);
+            }
           })
           .finally(() => {
             setIsLoading(false);

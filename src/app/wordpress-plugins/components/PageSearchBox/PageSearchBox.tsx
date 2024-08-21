@@ -128,18 +128,20 @@ export const PageSearchBox = () => {
                     </p>
                     {tag?.data && tag?.data?.slice(0, 5)?.length > 0 && (
                       <div className={styles.tags}>
-                        {tag?.data?.map((el: { slug: string; tag: string }) => {
-                          return (
-                            <button
-                              onClick={() => redirectToTag(el?.slug)}
-                              key={Math.random()}
-                            >
-                              #
-                              {el?.tag[0]?.toUpperCase() +
-                                el?.tag?.substring(1)}
-                            </button>
-                          );
-                        })}
+                        {tag?.data?.map(
+                          (el: { slug: string; tag: string }, i: number) => {
+                            return (
+                              <button
+                                onClick={() => redirectToTag(el?.slug)}
+                                key={i}
+                              >
+                                #
+                                {el?.tag[0]?.toUpperCase() +
+                                  el?.tag?.substring(1)}
+                              </button>
+                            );
+                          },
+                        )}
                       </div>
                     )}
                   </div>

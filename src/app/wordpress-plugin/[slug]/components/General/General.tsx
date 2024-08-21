@@ -106,7 +106,7 @@ export function General({
                   className={styles.pName}
                 />
                 <div className={styles.header}>
-                  {author[0] && (
+                  {author && author[0] && (
                     <div>
                       <span>By</span>{' '}
                       <a
@@ -117,7 +117,7 @@ export function General({
                       </a>
                     </div>
                   )}
-                  {!smallScreen && author[0]?.author_name && <Dot />}
+                  {!smallScreen && author && author[0]?.author_name && <Dot />}
                   {!smallScreen && plugin?.official_website_link && (
                     <a
                       href={plugin?.official_website_link}
@@ -283,9 +283,9 @@ export function General({
             hasTrack={false}
           >
             <SplideTrack>
-              {images?.slice(smallScreen ? 0 : 1)?.map((el: any) => {
+              {images?.slice(smallScreen ? 0 : 1)?.map((el: any, i) => {
                 return (
-                  <SplideSlide key={Math.random()}>
+                  <SplideSlide key={i}>
                     {typeof el === 'string' ? (
                       rendered && (
                         <iframe className={styles.video} src={el as string} />

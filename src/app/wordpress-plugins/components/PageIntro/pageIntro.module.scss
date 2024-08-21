@@ -27,6 +27,9 @@
       line-height: 34px;
     }
   }
+  img{
+    height: 320px;
+  }
 }
 @media screen and (max-width: 1260px){
 
@@ -40,7 +43,6 @@
 }
 @media screen and (max-width: 768px){
   .container {
-
     .introTextContainer {
       max-width: 335px;
 

@@ -32,7 +32,9 @@ export default function PluginsList({ initialData }: { initialData: Data }) {
     //@ts-ignore
     getAllPosts({ query: searchParams.get('query'), page: 1 })
       .then((response) => {
-        setData(response);
+        if (response) {
+          setData(response);
+        }
       })
       .finally(() => {
         setIsLoading(false);

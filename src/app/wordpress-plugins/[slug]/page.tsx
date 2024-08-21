@@ -69,11 +69,13 @@ export default async function Post({
     </>
   );
 }
-
 export const revalidate = 60;
 
 export async function generateStaticParams() {
   const categories = await getCategories();
+  if (!categories) {
+    return [];
+  }
   return categories?.map((cat: { slug: string }) => ({
     slug: cat?.slug?.toString(),
     category: cat,

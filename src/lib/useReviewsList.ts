@@ -38,7 +38,9 @@ export const useReviewsList = ({
         slug,
       })
         .then((response) => {
-          setData(response);
+          if (response) {
+            setData(response);
+          }
         })
         .finally(() => {
           setIsLoading(false);
