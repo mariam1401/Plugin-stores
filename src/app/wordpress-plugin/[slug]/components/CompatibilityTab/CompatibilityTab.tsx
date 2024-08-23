@@ -30,7 +30,7 @@ export function CompatibilityTab({ plugin }: { plugin: IPlugin }) {
           </p>
           <Tooltip anchorSelect="#compatibilityTooltip">
             {plugin?.plugin_compatibilities
-              ?.slice(4, plugin?.plugin_compatibilities.length)
+              ?.slice(5, plugin?.plugin_compatibilities.length)
               ?.join(', ')}
           </Tooltip>
         </div>
