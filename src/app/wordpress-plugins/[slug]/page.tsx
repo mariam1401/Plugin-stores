@@ -70,6 +70,7 @@ export default async function Post({
   );
 }
 export const revalidate = 60;
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
   const categories = await getCategories();
