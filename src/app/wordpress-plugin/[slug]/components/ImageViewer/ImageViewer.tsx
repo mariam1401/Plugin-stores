@@ -23,10 +23,8 @@ const getImgUrl = (item: IScreenshot | undefined | string): string => {
 
     return thumbnailUrl;
   }
-
   return item?.screenshot_url as string;
 };
-
 export default function ImagePreviewSection({ plugin }: { plugin: IPlugin }) {
   const [rendered, setRendered] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
@@ -70,6 +68,20 @@ export default function ImagePreviewSection({ plugin }: { plugin: IPlugin }) {
     }
   }
 
+  useEffect(() => {
+    if (isViewerOpen) {
+      const imgElement = document.querySelector(
+          '.react-simple-image-viewer__slide img'
+      );
+      if (imgElement) {
+        imgElement.setAttribute(
+            'alt',
+            plugin?.plugin_name || ''
+        );
+      }
+    }
+  }, [isViewerOpen, currentImage, plugin]);
+
   return (
     <div
       className={classNames(styles.container, {
@@ -78,35 +90,47 @@ export default function ImagePreviewSection({ plugin }: { plugin: IPlugin }) {
     >
       {typeof images[currentImage] === 'string' ? (
         rendered && (
-          <iframe src={convertToEmbedUrl(images[currentImage]) as string} />
+          <iframe src={convertToEmbedUrl(images[currentImage]) as string}/>
         )
       ) : images[currentImage] ? (
         <img
           src={(images[currentImage] as IScreenshot)?.screenshot_url!}
-          alt="Cover Photo"
+          alt={plugin?.plugin_name || ''}
         />
       ) : null}
       {!middleScreen && !!images?.length && (
         <div className={styles.imgsColumn}>
           {images?.map((eachImage, index) =>
             index < 4 ? (
-              <div
-                style={{
-                  border:
-                    currentImage === index
-                      ? '2px solid #000000'
-                      : '1px solid #EAEAEA',
-                  backgroundImage: `url(${getImgUrl(eachImage)})`,
-                  backgroundSize: 'cover',
-                }}
-                onClick={() => {
-                  setCurrentImage(index);
-                }}
-                className={styles.eachImage}
-                key={getImgUrl(eachImage)}
-              >
-                {typeof eachImage === 'string' && <Play />}
-              </div>
+                <div
+                    style={{position: 'relative'}}
+                    onClick={() => {
+                      setCurrentImage(index);
+                    }}
+                    className={styles.eachImage}
+                    key={getImgUrl(eachImage)}
+                >
+                  <img
+                      src={getImgUrl(eachImage)}
+                      alt={plugin?.plugin_name || ''}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                      }}
+                  />
+                  {typeof eachImage === 'string' && (
+                      <Play
+                          style={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%, -50%)',
+                          }}
+                      />
+                  )}
+                </div>
+
             ) : null,
           )}
 
@@ -122,7 +146,6 @@ export default function ImagePreviewSection({ plugin }: { plugin: IPlugin }) {
           )}
         </div>
       )}
-
       {isViewerOpen && (
         <ImageViewer
           src={plugin?.screenshots?.map(

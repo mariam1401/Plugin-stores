@@ -47,31 +47,24 @@ export function AboutPlugin({
           <div>
             <span className={styles.label}>Author:</span>
             {` `}
-            <span
-              onClick={() =>
-                router.push(
-                  `/wordpress-plugins/profiles/${contributor && contributor[0] && contributor[0]?.slug}`,
-                )
-              }
-              className={classNames(styles.value, styles.underline)}
-              style={{ cursor: 'pointer' }}
+            <a
+                href={`/wordpress-plugins/profiles/${contributor && contributor[0] && contributor[0]?.slug}/`}
+                className={classNames(styles.value, styles.underline)}
+                style={{ cursor: 'pointer' }}
             >
               {contributor && contributor[0] && contributor[0]?.author_name}
-            </span>
+            </a>
           </div>
         )}
         <div className={styles.item}>
           <span className={styles.label}>Categories:</span>
           {` `}
-          <span
-            onClick={() =>
-              router.push(`/wordpress-plugins/${plugin?.category?.slug}`)
-            }
+          <a href={`/wordpress-plugins/${plugin?.category?.slug}/`}
             className={classNames(styles.value, styles.underline)}
             style={{ cursor: 'pointer' }}
           >
             {plugin?.category?.category || ''}
-          </span>
+          </a>
         </div>
         <div className={styles.item}>
           <span className={styles.label}>Version:</span>
@@ -123,15 +116,12 @@ export function AboutPlugin({
           <span className={styles.label}>Tags:</span>
           <div className={styles.tags}>
             {plugin?.tags?.map((tag: ITag) => (
-              <p
-                onClick={() =>
-                  router.push(`/wordpress-plugins/tag/${tag?.slug}`)
-                }
+              <a href={`/wordpress-plugins/tag/${tag?.slug}/`}
                 className={styles.tag}
                 key={tag?.id}
               >
                 {tag?.tag[0]?.toUpperCase() + tag?.tag?.substring(1)}
-              </p>
+              </a>
             ))}
           </div>
         </div>

@@ -66,9 +66,9 @@ export function AddOns({ morePlugins, title }: IProps) {
         {!!morePlugins?.data?.length &&
           //@ts-ignore
           morePlugins?.metadata?.totalCount > 3 && (
-            <button onClick={redirectToCategoryPage} className={styles.seeAll}>
+            <a href={'/alternatives/'} className={styles.seeAll}>
               See all <Arrow />
-            </button>
+            </a>
           )}
       </div>
       <div>
