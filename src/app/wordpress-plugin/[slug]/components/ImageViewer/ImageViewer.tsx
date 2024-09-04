@@ -103,7 +103,13 @@ export default function ImagePreviewSection({ plugin }: { plugin: IPlugin }) {
           {images?.map((eachImage, index) =>
             index < 4 ? (
                 <div
-                    style={{position: 'relative'}}
+                    style={{
+                      position: 'relative',
+                      border:
+                          currentImage === index
+                              ? '2px solid #000000'
+                              : '1px solid #EAEAEA',
+                }}
                     onClick={() => {
                       setCurrentImage(index);
                     }}

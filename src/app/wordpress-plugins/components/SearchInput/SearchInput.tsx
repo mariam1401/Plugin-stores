@@ -214,6 +214,7 @@ export default function SearchInput({
             <>
               <Menu />
               {!middleScreen && <span>All plugins</span>}{' '}
+              {tes}
             </>
           )}
         </button>
@@ -227,7 +228,7 @@ export default function SearchInput({
         <div className={styles.categorySelectorContent}>
           <p className={styles.header}>Plugin categories</p>
           <div className={styles.categories}>
-            {categories.map((eachCategory) => (
+            {categories?.map((eachCategory) => (
               <EachCategoryFilter
                 selectedCategory={selectedCategory}
                 onClick={handleCategoryChange}
