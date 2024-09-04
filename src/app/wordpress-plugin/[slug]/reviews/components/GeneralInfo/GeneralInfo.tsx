@@ -17,12 +17,11 @@ export default function GeneralInfo({
   plugin: IPlugin;
   text?: string;
 }) {
-  const router = useRouter();
 
   return (
     <div className={styles.container}>
       <div className={styles.logoContainer}>
-        <img className={styles.logo} src={plugin?.logo} alt="" />
+        <img className={styles.logo} src={plugin?.logo} alt={plugin?.plugin_name || ''} />
       </div>
       <div className={styles.info}>
         <div className={styles.firstRow}>
@@ -38,7 +37,7 @@ export default function GeneralInfo({
             <Star /> {plugin?.rating}
           </span>
           <Dot />
-          <p className={styles.category}>{plugin?.category?.category}</p>
+          <a href={`/wordpress-plugins/${plugin?.category?.slug}/`} className={styles.category}>{plugin?.category?.category}</a>
         </div>
 
         <p
@@ -48,20 +47,17 @@ export default function GeneralInfo({
         <div className={styles.bottom}>
           <div className={styles.tags}>
             {plugin?.tags?.map((tag) => (
-              <p
-                onClick={() =>
-                  router.push(`/wordpress-plugins/tag/${tag?.slug}`)
-                }
+              <a href={`/wordpress-plugins/tag/${tag?.slug}/`}
                 className={styles.tag}
                 key={tag?.id}
               >
                 {tag?.tag[0]?.toUpperCase() + tag?.tag?.substring(1)}
-              </p>
+              </a>
             ))}
           </div>
 
           <Link
-            href={`/wordpress-plugin/${plugin?.plugin_slug}`}
+            href={`/wordpress-plugin/${plugin?.plugin_slug}/`}
             className={styles.link}
           >
             Go To Plugin Page

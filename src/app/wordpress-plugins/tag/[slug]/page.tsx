@@ -1,13 +1,10 @@
 import { notFound } from 'next/navigation';
-
 import { GeneralContent } from '@/app/wordpress-plugins/components/GeneralContent';
-
 import getCategories from '@/lib/getCategories';
 import getAllPosts from '@/lib/getAllPosts';
 import { ITag } from '@/@types/plugin';
 import getTags from '@/lib/getTags';
 import getTag from '@/lib/getTag';
-
 import styles from '../../page.module.scss';
 
 export async function generateMetadata({

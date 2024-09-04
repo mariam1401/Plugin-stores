@@ -95,7 +95,7 @@ export function General({
               src={plugin?.logo}
               height={64}
               width={64}
-              alt="Logo"
+              alt={plugin?.plugin_name || ''}
             />
             <div className={styles.info}>
               <div className={styles.div}>

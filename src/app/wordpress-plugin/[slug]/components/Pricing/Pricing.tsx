@@ -113,7 +113,7 @@ export function Pricing({ plugin }: { plugin: IPlugin }) {
       </a>
       {prices?.length > 2 && (
         <div className={styles.overlay}>
-          <a href={`/wordpress-plugin/${plugin?.plugin_slug}/pricing`}>
+          <a href={`/wordpress-plugin/${plugin?.plugin_slug}/pricing/`}>
             Find Your Price Plan
           </a>
         </div>

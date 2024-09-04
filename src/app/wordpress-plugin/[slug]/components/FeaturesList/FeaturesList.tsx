@@ -157,11 +157,11 @@ export function FeaturesList({ plugin }: { plugin: IPlugin }) {
                 >
                   <p className={styles.body}>
                     {eachColumn === 'pro' ? (
-                      <CheckMArk />
+                      <CheckMArk  alt={'true'}/>
                     ) : eachItem[eachColumn] ? (
-                      <CheckMArk />
+                      <CheckMArk alt={'true'} />
                     ) : (
-                      <XMArk />
+                      <XMArk alt={'false'}/>
                     )}
                   </p>
                 </div>

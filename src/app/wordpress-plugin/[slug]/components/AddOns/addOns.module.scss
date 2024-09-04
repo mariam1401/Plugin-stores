@@ -21,7 +21,6 @@
   z-index: 10;
   top: 0;
   background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
-
 }
 
 .items {
@@ -34,6 +33,7 @@
   border: none;
   text-decoration: underline;
   display: flex;
+  align-items: center;
   gap: 4px;
   cursor: pointer;
 }
