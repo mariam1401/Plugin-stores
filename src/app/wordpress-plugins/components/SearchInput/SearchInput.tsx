@@ -214,7 +214,6 @@ export default function SearchInput({
             <>
               <Menu />
               {!middleScreen && <span>All plugins</span>}{' '}
-              {tes}
             </>
           )}
         </button>
