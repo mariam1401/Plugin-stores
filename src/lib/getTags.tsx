@@ -12,7 +12,7 @@ export default async function getTags({
 }) {
   try {
     const res = await axios.get(
-      `https://plugin-store-api.10web.io/api/public/plugins/tags?limit=${limit ?? PAGE_PER_LIMIT}&offset=${(page - 1) * PAGE_PER_LIMIT}${query ? `&query=${query}` : ''}&published-only=true}`,
+      `https://plugin-store-api.10web.io/api/public/plugins/tags?limit=${limit ?? PAGE_PER_LIMIT}&offset=${(page - 1) * PAGE_PER_LIMIT}${query ? `&query=${query}` : ''}&published-only=true`,
     );
     if (res.status !== 200) return undefined;
     return res.data;
