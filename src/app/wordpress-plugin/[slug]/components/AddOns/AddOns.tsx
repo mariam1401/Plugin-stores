@@ -66,7 +66,7 @@ export function AddOns({ morePlugins, title }: IProps) {
         {!!morePlugins?.data?.length &&
           //@ts-ignore
           morePlugins?.metadata?.totalCount > 3 && (
-            <a href={'/alternatives/'} className={styles.seeAll}>
+            <a href={'alternatives/'} className={styles.seeAll}>
               See all <Arrow />
             </a>
           )}
