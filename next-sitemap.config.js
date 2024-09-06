@@ -2,5 +2,5 @@
 
 module.exports = {
   siteUrl: process.env.SITE_URL || 'https://10web.io/wordpress-plugins',
-  outDir: 'src/app/wordpress-plugins'
+  outDir: 'public/plugins'
 };
