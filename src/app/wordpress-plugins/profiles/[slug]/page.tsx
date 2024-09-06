@@ -77,9 +77,12 @@ export const revalidate = 60;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  const contributors = await getAllContributorsSlugs();
+  let contributors = await getAllContributorsSlugs();
   if (!contributors) {
     return [];
+  }
+  if(process.env.STAGE === 'dev'){
+    contributors = contributors?.slice(0,100)
   }
   return contributors?.map((el:string) => ({
     slug: el?.toString(),

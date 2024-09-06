@@ -134,9 +134,12 @@ export const dynamicParams = true;
 
 
 export async function generateStaticParams() {
-  const pluginSlugs = await getPostsForGeneration();
+  let pluginSlugs = await getPostsForGeneration();
   if (!pluginSlugs) {
     return [];
+  }
+  if(process.env.STAGE === 'dev'){
+    pluginSlugs =  pluginSlugs?.slice(0,100)
   }
   return pluginSlugs?.map((post: string) => ({
     slug: post?.toString(),
