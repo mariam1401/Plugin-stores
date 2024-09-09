@@ -28,17 +28,33 @@ const nextConfig = {
 
         return config
     },
-
-    async redirects() {
+    async rewrites() {
         return [
-            // Basic redirect
             {
                 source: '/',
                 destination: '/wordpress-plugins',
-                permanent: true,
-            }
-        ]
+            },
+            {
+                source: '/static/wordpress-plugins/:path*',
+                destination: '/wordpress-plugins/:path*',
+            },
+            {
+                source: '/app/wordpress-plugins/:path*',
+                destination: '/app/wordpress-plugins/:path*',
+            },
+        ];
     },
+
+    // async redirects() {
+    //     return [
+    //         // Basic redirect
+    //         {
+    //             source: '/',
+    //             destination: '/wordpress-plugins',
+    //             permanent: true,
+    //         }
+    //     ]
+    // },
 };
 
 export default nextConfig;
