@@ -35,7 +35,7 @@ const nextConfig = {
                 destination: '/wordpress-plugins',
             },
             {
-                source: '/static/wordpress-plugins/:path*',
+                source: '/public/wordpress-plugins/:path*',
                 destination: '/wordpress-plugins/:path*',
             },
             {
