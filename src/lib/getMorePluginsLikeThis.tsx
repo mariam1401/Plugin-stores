@@ -13,7 +13,7 @@ export default async function getMorePluginsLikeThis({
 }) {
   try {
     const res = await axios.get(
-      `https://plugin-store-api.10web.io/api/public/plugins/${id}/more-plugins-like-this?limit=${limit ?? ALTERNATIVES_PAGE_PER_LIMIT}&offset=${offset || 0}`,
+      `https://9pie1fvxyi.execute-api.us-east-1.amazonaws.com/api/public/plugins/${id}/more-plugins-like-this?limit=${limit ?? ALTERNATIVES_PAGE_PER_LIMIT}&offset=${offset || 0}`,
     );
     if (res.status !== 200) {
       return undefined;
