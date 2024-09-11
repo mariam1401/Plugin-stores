@@ -59,10 +59,11 @@ export const revalidate = 60;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  const tags = await getTags({ limit:process.env.STAGE === 'dev' ? 100 : 5000000, page: 1 });
+  const tags = await getTags({ limit:process.env.STAGE === 'dev' ? 100 : 50000, page: 1 });
   if (!tags) {
     return [];
   }
+
   return tags?.data?.map((tag: { slug: string }) => ({
     slug: tag?.slug?.toString(),
     tag: tag,
