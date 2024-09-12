@@ -58,7 +58,7 @@ export default async function Post({
   if (pluginData?.plugin_id) {
     more_plugins = await getMorePluginsLikeThis({
       id: pluginData?.plugin_id,
-      offset: 0,
+      offset: '',
       limit: 4,
     });
     reviews = await getReviews({
