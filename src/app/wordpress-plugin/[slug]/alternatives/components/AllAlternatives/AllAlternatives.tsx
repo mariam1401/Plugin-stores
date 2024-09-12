@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState, useRef } from 'react';
 
-import { PaginationItem, useMediaQuery, Pagination } from '@mui/material';
+import { useMediaQuery } from '@mui/material';
 import classNames from 'classnames';
 import Link from 'next/link';
 
@@ -19,21 +19,27 @@ export default function AllAlternatives({ plugin }: { plugin: IPlugin }) {
   const ref = useRef<HTMLDivElement>(null);
   const [initialRender, setInitialRender] = useState(false);
   const smallScreen = useMediaQuery('(max-width:768px)');
-  const [page, setPage] = useState(1);
+  const [allData, setAllData] = useState([])
+  const [offsetTemp, setOffsetTemp] = useState('')
   const {
-    metadata: { totalCount },
+    metadata: { totalCount, lastEvaluatedKey },
     data,
   } = useAlternativesList({
-    offset: (page - 1) * ALTERNATIVES_PAGE_PER_LIMIT,
+    offset: offsetTemp,
     id: plugin?.plugin_id,
   });
+  useEffect(() => {
+    if (data) {
+      const temp: any = [...allData, ...data]
+      setAllData(temp)
+    }
+  }, [data])
 
   const pagesCount = Math.ceil(totalCount / ALTERNATIVES_PAGE_PER_LIMIT);
 
-  const handlePageChange = (_: React.ChangeEvent<unknown>, value: number) => {
-    setPage(value);
-    if (ref.current) {
-      ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const showMore = () => {
+    if (lastEvaluatedKey?.SK?.S) {
+      setOffsetTemp(lastEvaluatedKey?.SK?.S)
     }
   };
 
@@ -48,7 +54,7 @@ export default function AllAlternatives({ plugin }: { plugin: IPlugin }) {
     <div className={styles.container} ref={ref}>
       <p className={styles.title}>All similar plugins</p>
       <div className={styles.items}>
-        {data?.map((eachItem) => (
+        {allData?.map((eachItem: any) => (
           <div className={styles.pluginInfo} key={eachItem?.plugin_id}>
             <div className={styles.item}>
               <img className={styles.logo} src={eachItem?.logo} alt="" />
@@ -113,28 +119,14 @@ export default function AllAlternatives({ plugin }: { plugin: IPlugin }) {
         ))}
       </div>
       <div className={styles.pagination}>
-        {initialRender && pagesCount > 1 && (
-          <Pagination
-            renderItem={(item) => (
-              <PaginationItem
-                classes={{
-                  colorPrimary: styles.selectedPage,
-                  selected: styles.selectedPage,
-                }}
-                {...item}
-              />
-            )}
-            sx={{
-              '& .MuiPaginationItem-previousNext': {
-                border: '1px solid #cfcfcf',
-              },
-            }}
-            onChange={handlePageChange}
-            count={pagesCount}
-            size="medium"
-            page={page}
-          />
-        )}
+        {
+          initialRender && pagesCount > 1
+          && lastEvaluatedKey?.SK?.S
+          && <button
+            onClick={showMore}
+            className={styles.showMoreBtn}
+          >Show More</button>
+        }
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ import { IMorePlugins } from '@/@types/plugin';
 export interface Data {
   metadata: {
     totalCount: number;
+    lastEvaluatedKey?:any
   };
   data: IMorePlugins[] | null | [];
 }
@@ -17,17 +18,17 @@ export const useAlternativesList = ({
   id,
 }: {
   id?: number | string;
-  offset: number;
+  offset: string;
 }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [{ metadata, data }, setData] = useState<Data>({
-    metadata: { totalCount: 0 },
+    metadata: { totalCount: 0, lastEvaluatedKey: {} },
     data: null,
   });
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const debounced = useCallback(
-    debounce((id: number | string, offset: undefined | number) => {
+    debounce((id: number | string, offset: undefined | string) => {
       setIsLoading(true);
       getMorePluginsLikeThis({
         offset,
