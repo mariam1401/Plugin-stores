@@ -20,7 +20,6 @@ export function AboutPlugin({
     ?.map((language) => language)
     ?.join(', ');
   const hiddenLanguages = plugin?.languages?.slice(3) || [];
-  console.log('hiddenLanguages',hiddenLanguages);
   
   const hiddenLanguagesCount = hiddenLanguages?.length ?? 0;
   const hiddenLanguagesText = hiddenLanguages

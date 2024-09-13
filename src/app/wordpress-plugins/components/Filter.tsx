@@ -135,6 +135,15 @@ export const Filter = ({
   const [openWordPress, setOpenWordPress] = useState(false);
   const [showMore, setShowMore] = useState(false);
   const router = useRouter();
+  useEffect(() => {
+    if (categories && data?.category_id) {
+      const finded = categories?.slice(0, 9)?.find((cat: any) => cat.slug === data?.category_id)
+      if (!finded) {
+        setShowMore(true)
+      }
+    }
+  },
+    [categories, data?.category_id])
   const handleFilterData = (value: { slug: string }, name: string) => {
     setIsFilter(true);
     if (value && name) {
@@ -169,7 +178,7 @@ export const Filter = ({
       }
     }
     setInitialRender(true);
-    console.log(initialRender);
+    // console.log(initialRender);
   }, []);
 
   useEffect(() => {
