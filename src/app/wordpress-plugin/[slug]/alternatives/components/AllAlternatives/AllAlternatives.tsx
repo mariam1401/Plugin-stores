@@ -46,7 +46,7 @@ export default function AllAlternatives({ plugin }: { plugin: IPlugin }) {
       setOffsetTemp(lastEvaluatedKey?.SK?.S);
       setIsLoading(false);
     }
-  }, 300);
+  }, 100);
 
   useEffect(() => {
     setInitialRender(true);
