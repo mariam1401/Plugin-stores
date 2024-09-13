@@ -122,7 +122,7 @@ export default function ImagePreviewSection({ plugin }: { plugin: IPlugin }) {
                       style={{
                         width: '100%',
                         height: '100%',
-                        objectFit: 'cover',
+                        objectFit: 'contain',
                       }}
                   />
                   {typeof eachImage === 'string' && (

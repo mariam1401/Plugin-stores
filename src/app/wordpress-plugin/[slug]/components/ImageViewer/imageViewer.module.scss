@@ -4,7 +4,7 @@
 
   .imgsColumn {
     display: grid;
-    grid-template-rows: repeat(4,1fr);
+    grid-template-rows: repeat(4, 83px);
     gap: 10px;
     justify-content: space-between;
     min-width: 80px;
@@ -16,6 +16,7 @@
     justify-content: center;
     align-items: center;
     width: 80px;
+    height: 100%;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -33,7 +34,7 @@
     height: 80px;
     width: 100%;
     //top: 270px;
-    bottom: 0%;
+    bottom: 0;
     cursor: pointer;
 
     .moreItemsCount {
