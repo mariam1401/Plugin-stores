@@ -7,20 +7,23 @@ import Link from 'next/link';
 
 import { useAlternativesList } from '@/lib/useAlternativesList';
 import { ALTERNATIVES_PAGE_PER_LIMIT } from '@/lib/consts';
-import { IPlugin } from '@/@types/plugin';
+import { IMorePlugins, IPlugin } from '@/@types/plugin';
 
 import Download from './download.svg';
 import Star from './star.svg';
 import Dot from './dot.svg';
 
 import styles from './allAlternatives.module.scss';
+import debounce from 'lodash.debounce';
 
 export default function AllAlternatives({ plugin }: { plugin: IPlugin }) {
   const ref = useRef<HTMLDivElement>(null);
   const [initialRender, setInitialRender] = useState(false);
   const smallScreen = useMediaQuery('(max-width:768px)');
-  const [allData, setAllData] = useState([])
-  const [offsetTemp, setOffsetTemp] = useState('')
+  const [allData, setAllData] = useState<IMorePlugins[]>([]);
+  const [offsetTemp, setOffsetTemp] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
   const {
     metadata: { totalCount, lastEvaluatedKey },
     data,
@@ -30,18 +33,20 @@ export default function AllAlternatives({ plugin }: { plugin: IPlugin }) {
   });
   useEffect(() => {
     if (data) {
-      const temp: any = [...allData, ...data]
-      setAllData(temp)
+      setAllData((prevData) => [...prevData, ...data]);
     }
-  }, [data])
+  }, [data]);
 
   const pagesCount = Math.ceil(totalCount / ALTERNATIVES_PAGE_PER_LIMIT);
 
-  const showMore = () => {
-    if (lastEvaluatedKey?.SK?.S) {
-      setOffsetTemp(lastEvaluatedKey?.SK?.S)
+  // Debounced showMore function to reduce unnecessary API calls
+  const showMore = debounce(() => {
+    if (lastEvaluatedKey?.SK?.S && !isLoading) {
+      setIsLoading(true);
+      setOffsetTemp(lastEvaluatedKey?.SK?.S);
+      setIsLoading(false);
     }
-  };
+  }, 300);
 
   useEffect(() => {
     setInitialRender(true);
@@ -57,7 +62,7 @@ export default function AllAlternatives({ plugin }: { plugin: IPlugin }) {
         {allData?.map((eachItem: any) => (
           <div className={styles.pluginInfo} key={eachItem?.plugin_id}>
             <div className={styles.item}>
-              <img className={styles.logo} src={eachItem?.logo} alt="" />
+              <img className={styles.logo} src={eachItem?.logo} alt="" loading="lazy" />
               <div className={styles.infoSection}>
                 <div
                   dangerouslySetInnerHTML={{
@@ -119,14 +124,11 @@ export default function AllAlternatives({ plugin }: { plugin: IPlugin }) {
         ))}
       </div>
       <div className={styles.pagination}>
-        {
-          initialRender && pagesCount > 1
-          && lastEvaluatedKey?.SK?.S
-          && <button
-            onClick={showMore}
-            className={styles.showMoreBtn}
-          >Show More</button>
-        }
+        {initialRender && pagesCount > 1 && lastEvaluatedKey?.SK?.S && (
+          <button onClick={showMore} className={styles.showMoreBtn}>
+            Show More
+          </button>
+        )}
       </div>
     </div>
   );
