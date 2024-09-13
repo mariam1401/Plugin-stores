@@ -17,12 +17,14 @@ export function AboutPlugin({
   plugin: IPlugin;
 }) {
   const visibleLanguages = (plugin?.languages?.slice(0, 2) || [])
-    ?.map((language) => language?.language)
+    ?.map((language) => language)
     ?.join(', ');
   const hiddenLanguages = plugin?.languages?.slice(3) || [];
+  console.log('hiddenLanguages',hiddenLanguages);
+  
   const hiddenLanguagesCount = hiddenLanguages?.length ?? 0;
   const hiddenLanguagesText = hiddenLanguages
-    ?.map((language) => language?.language)
+    ?.map((language) => language)
     ?.join(', ');
   const router = useRouter();
 
