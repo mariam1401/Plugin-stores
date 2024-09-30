@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from 'react';
 import { useMediaQuery } from '@mui/material';
 import classNames from 'classnames';
 import Link from 'next/link';
+import { Oval } from 'react-loader-spinner'
 
 import { useAlternativesList } from '@/lib/useAlternativesList';
 import { ALTERNATIVES_PAGE_PER_LIMIT } from '@/lib/consts';
@@ -34,6 +35,7 @@ export default function AllAlternatives({ plugin }: { plugin: IPlugin }) {
   useEffect(() => {
     if (data) {
       setAllData((prevData) => [...prevData, ...data]);
+      setIsLoading(false)
     }
   }, [data]);
 
@@ -44,7 +46,6 @@ export default function AllAlternatives({ plugin }: { plugin: IPlugin }) {
     if (lastEvaluatedKey?.SK?.S && !isLoading) {
       setIsLoading(true);
       setOffsetTemp(lastEvaluatedKey?.SK?.S);
-      setIsLoading(false);
     }
   }, 100);
 
@@ -126,7 +127,16 @@ export default function AllAlternatives({ plugin }: { plugin: IPlugin }) {
       <div className={styles.pagination}>
         {initialRender && pagesCount > 1 && lastEvaluatedKey?.SK?.S && (
           <button onClick={showMore} className={styles.showMoreBtn}>
-            Show More
+            {isLoading ?
+                <Oval
+                    height="25"
+                    width="25"
+                    color="#3339F1"
+                    secondaryColor='#3339F1'
+                />
+                :
+                'Show more'
+            }
           </button>
         )}
       </div>
