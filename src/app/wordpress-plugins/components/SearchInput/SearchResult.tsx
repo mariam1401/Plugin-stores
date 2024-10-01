@@ -1,4 +1,4 @@
-import { LegacyRef } from 'react';
+import {LegacyRef, useState} from 'react';
 
 import Link from 'next/link';
 
@@ -19,13 +19,29 @@ interface ISearchResult {
 }
 
 export const SearchResult = ({
-  isOpenedResult,
+  isOpenedResult,selectedTags,
   handleTags,
+  removeTag,
   resultRef,
   onClose,
   isTag,
   data,
 }: ISearchResult) => {
+  const handleCheckboxChange = (tag: string) => {
+    if (selectedTags.some(e=>e.tag === tag?.tag)) {
+      selectedTags.filter((t) => t !== tag?.tag);
+      removeTag(tag)
+    } else {
+      selectedTags = [...selectedTags, tag?.tag];
+    }
+    if (handleTags) {
+      handleTags(tag);
+    }
+    if (onClose) {
+      onClose()
+    }
+  };
+
   return (
     <>
       {data !== null && isOpenedResult && (
@@ -38,19 +54,18 @@ export const SearchResult = ({
           )}
           {isTag
             ? data?.map((el: IPlugin, index: number) => {
+              const isSelected = selectedTags?.some(e=>e?.tag === el?.tag)
                 return (
-                  <p
-                    onClick={() => {
-                      if (handleTags) {
-                        handleTags(el);
-                      }
-                      onClose?.();
-                    }}
-                    className={styles.tag}
-                    key={index}
-                  >
-                    {el?.tag}
-                  </p>
+                    <div  key={index} className={styles.tag_list}>
+                      <input
+                          className={styles.tag_ckb}
+                          type={"checkbox"}
+                          checked={isSelected}
+                          onChange={() => handleCheckboxChange(el)}
+
+                          />
+                      <label className={styles.tag}>{el?.tag}</label>
+                    </div>
                 );
               })
             : data?.map((eachPlugin) => (

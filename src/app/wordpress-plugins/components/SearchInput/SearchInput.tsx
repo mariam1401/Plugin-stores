@@ -58,6 +58,8 @@ export default function SearchInput({
   isTagSearch,
   hideButton,
   handleTags,
+  removeTag,
+    selectedTags,
 }: {
   handleTags?: () => void;
   isTagSearch?: boolean;
@@ -143,6 +145,7 @@ export default function SearchInput({
         {(middleScreen && openInput) || isTagSearch ? (
           <div>
             <input
+                className={styles.tag_input}
               placeholder={placeholder || 'Find the best WordPress plugins'}
               onChange={handleChange}
               onClick={openResult}
@@ -196,7 +199,9 @@ export default function SearchInput({
           handleTags={handleTags}
           resultRef={resultRef}
           isTag={isTagSearch}
+          removeTag={removeTag}
           data={data}
+          selectedTags={selectedTags}
         />
       </div>
       {!hideButton && (

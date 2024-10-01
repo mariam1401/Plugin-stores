@@ -6,6 +6,7 @@ import CheckIcon from '../../checkIcon.svg';
 import Link from './link.svg';
 
 import styles from './pricing.module.scss';
+import {sortPriceList} from "@/lib/sortPriceList";
 
 interface IOptionProps {
   billing_cycle: string;
@@ -53,14 +54,7 @@ export function Pricing({ plugin }: { plugin: IPlugin }) {
     return <div></div>;
   }
 
-  const prices = (plugin?.price_list || [])
-    ?.filter(
-      (eachItem) =>
-        eachItem?.price !== null &&
-        (typeof eachItem?.features?.[0] === 'string' ||
-          typeof eachItem?.features?.[0]?.feature_name === 'string'),
-    )
-    ?.sort((a, b) => a?.price - b?.price);
+  const prices = sortPriceList(plugin?.price_list)
 
   if (!prices?.length) {
     return <div></div>;
