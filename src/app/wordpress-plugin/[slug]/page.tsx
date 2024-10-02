@@ -21,6 +21,7 @@ import styles from './page.module.scss';
 import Script from "next/script";
 import {calculateRatingSummary} from "@/lib/getAverageRating";
 import {sortPriceList} from "@/lib/sortPriceList";
+import {IPricing} from "@/@types/plugin";
 
 function decodeEntities(encodedString: string) {
   return he.decode(encodedString || '');
@@ -48,12 +49,12 @@ export default async function Post({ params: { plugin, slug } }: { params: { slu
   let more_plugins = [];
   let reviews;
   let contributor;
-  let prices
+  let prices:IPricing[] = []
   if (pluginData?.plugin_id) {
     more_plugins = await getMorePluginsLikeThis({ id: pluginData?.plugin_id, offset: '', limit: 4 });
     reviews = await getReviews({ slug: pluginData?.plugin_slug, offset: 0, limit: 5 });
     contributor = await getPluginContributors({ slug, offset: 0, limit: 1 });
-    prices = sortPriceList(pluginData?.price_list)
+    prices = sortPriceList(pluginData?.price_list) || []
   }
 
   if (!pluginData) {

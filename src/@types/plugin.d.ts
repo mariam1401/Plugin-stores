@@ -15,11 +15,11 @@ interface IScreenshot {
 }
 
 interface ITag {
-  createdAt: string;
-  updatedAt: string;
+  createdAt?: string;
+  updatedAt?: string;
   slug: string;
   tag: string;
-  id: number;
+  id?: number;
 }
 
 interface IReview {
@@ -82,6 +82,7 @@ interface IChangelog {
 interface IPricing {
   features: { feature_name: string; description: string }[] | string[];
   billing_cycle: string;
+  feature_name?: string;
   price: number;
   name: string;
 }

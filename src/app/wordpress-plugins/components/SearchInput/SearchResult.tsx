@@ -6,7 +6,7 @@ import styles from '@/app/wordpress-plugins/components/SearchInput/searchInput.m
 import NotFoundIcon from '@/app/wordpress-plugins/components/SearchInput/notFoundIcon.svg';
 import Logo from '@/app/components/PluginsList/pluginIcon.svg';
 
-import { IPlugin } from '@/@types/plugin';
+import {IPlugin, ITag} from '@/@types/plugin';
 
 interface ISearchResult {
   resultRef: LegacyRef<HTMLDivElement> | undefined;
@@ -16,10 +16,15 @@ interface ISearchResult {
   handleTags?: (e: any) => void;
   onClose?: () => void;
   isTag?: boolean;
+  selectedTags?:ITag[];
+  // eslint-disable-next-line no-unused-vars
+  removeTag?:(e:any)=>void
+
 }
 
 export const SearchResult = ({
-  isOpenedResult,selectedTags,
+  isOpenedResult,
+  selectedTags,
   handleTags,
   removeTag,
   resultRef,
@@ -27,12 +32,14 @@ export const SearchResult = ({
   isTag,
   data,
 }: ISearchResult) => {
-  const handleCheckboxChange = (tag: string) => {
-    if (selectedTags.some(e=>e.tag === tag?.tag)) {
-      selectedTags.filter((t) => t !== tag?.tag);
-      removeTag(tag)
+  const handleCheckboxChange = (tag:ITag) => {
+    if (selectedTags?.some(e=>e?.tag === tag?.tag)) {
+      selectedTags?.filter((t) => t?.tag !== tag?.tag);
+      if (removeTag) {
+        removeTag(tag)
+      }
     } else {
-      selectedTags = [...selectedTags, tag?.tag];
+      selectedTags = [...(selectedTags ?? []), tag];
     }
     if (handleTags) {
       handleTags(tag);

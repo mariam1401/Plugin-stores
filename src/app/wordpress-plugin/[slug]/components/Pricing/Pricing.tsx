@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 
-import { IPlugin } from '@/@types/plugin';
+import {IPlugin, IPricing} from '@/@types/plugin';
 
 import CheckIcon from '../../checkIcon.svg';
 import Link from './link.svg';
@@ -10,6 +10,7 @@ import {sortPriceList} from "@/lib/sortPriceList";
 
 interface IOptionProps {
   billing_cycle: string;
+  feature_name?:string;
   items: string[];
   plugin: IPlugin;
   price: number;
@@ -68,7 +69,7 @@ export function Pricing({ plugin }: { plugin: IPlugin }) {
       <div className={styles.options}>
         {prices[0] && (
           <Option
-            items={prices[0]?.features?.map((a) =>
+            items={prices[0]?.features?.map((a:any) =>
               typeof a === 'string' ? a : a?.feature_name || '',
             )}
             billing_cycle={prices[0].billing_cycle}
@@ -81,7 +82,7 @@ export function Pricing({ plugin }: { plugin: IPlugin }) {
 
         {prices?.length > 1 && (
           <Option
-            items={prices[prices?.length - 1]?.features?.map((a) =>
+            items={prices[prices?.length - 1]?.features?.map((a:any) =>
               typeof a === 'string' ? a : a?.feature_name || '',
             )}
             billing_cycle={prices[prices.length - 1].billing_cycle}

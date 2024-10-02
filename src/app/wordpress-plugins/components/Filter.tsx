@@ -129,7 +129,7 @@ export const Filter = ({
   const pathName = usePathname();
   const [initialRender, setInitialRender] = useState(false);
   const [rangeRating, setRangeRating] = useState([0, 5]);
-  const [rangeInstalations, setRangeInstalations] = useState([0, 1000000]);
+  const [rangeInstalations, setRangeInstalations] = useState([0, 10000000]);
   const middleScreen = useMediaQuery('(max-width:1260px)');
   const [openPhp, setOpenPhp] = useState(false);
   const [openWordPress, setOpenWordPress] = useState(false);
@@ -640,7 +640,7 @@ export const Filter = ({
               }
               handleSliderValue={handleSliderValue}
               name={'installationsRange'}
-              max={1000000}
+              max={10000000}
               step={100000}
               min={0}
             />

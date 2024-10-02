@@ -12,7 +12,7 @@ import useOutsideClick from '@/lib/useOutsideClick';
 import { usePluginList } from '@/lib/usePluginList';
 import getCategories from '@/lib/getCategories';
 import { useTagList } from '@/lib/useTagList';
-import { ICategory } from '@/@types/plugin';
+import {ICategory, ITag} from '@/@types/plugin';
 
 import SearchIcon from './searchIcon.svg';
 import CloseIcon from './closeIcon.svg';
@@ -59,12 +59,14 @@ export default function SearchInput({
   hideButton,
   handleTags,
   removeTag,
-    selectedTags,
+  selectedTags,
 }: {
   handleTags?: () => void;
   isTagSearch?: boolean;
   placeholder?: string;
   hideButton?: boolean;
+  removeTag?:()=>void;
+  selectedTags?:ITag[]
 }) {
   const [categories, setCategories] = useState<ICategory[]>([]);
   const [isOpened, setIsOpened] = useState(false);

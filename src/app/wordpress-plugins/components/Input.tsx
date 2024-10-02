@@ -15,7 +15,7 @@ export const Input = ({ handleValue, data, name }) => {
         <span>max</span>
         <input
           onChange={(e) => handleValue(e, 1)}
-          value={data && (data[1] === 1000000 ? '1m+' : data[1])}
+          value={data && (data[1] === 10000000 ? '1M+' : data[1])}
           name={name}
         />
       </div>
