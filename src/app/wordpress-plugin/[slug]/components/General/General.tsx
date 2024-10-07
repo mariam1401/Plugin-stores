@@ -19,6 +19,7 @@ import Link from './link.svg';
 import Star from './star.svg';
 import Dot from './dot.svg';
 
+
 import styles from './general.module.scss';
 const basePath = 'https://storage.googleapis.com/pluginstore-plugins-images/';
 const getImgUrl = (item: IScreenshot | string): string => {
@@ -92,7 +93,7 @@ export function General({
           <div className={styles.logoInfo}>
             <img
               className={styles.logo}
-              src={plugin?.logo}
+              src={plugin?.logo || `/defaultLogo.png`}
               height={64}
               width={64}
               alt={plugin?.plugin_name || ''}

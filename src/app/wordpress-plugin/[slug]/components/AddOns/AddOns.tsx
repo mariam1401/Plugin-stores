@@ -128,7 +128,7 @@ export function AddOns({ morePlugins, title }: IProps) {
                     name={eachPlugin?.plugin_name}
                     rating={eachPlugin?.rating}
                     key={eachPlugin?.plugin_id}
-                    image={eachPlugin?.logo}
+                    image={eachPlugin?.logo || '/defaultLogo.png'}
                   />
                 </SplideSlide>
               );

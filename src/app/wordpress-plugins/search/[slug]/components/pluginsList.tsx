@@ -113,7 +113,7 @@ export const PluginsList = ({
                     isBlackTheme={false}
                     rating={el?.rating!}
                     key={el?.plugin_id}
-                    image={el?.logo}
+                    image={el?.logo || '/defaultLogo.png'}
                   />
                 );
               })}
