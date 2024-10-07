@@ -64,47 +64,35 @@ export default async function Post({ params: { plugin, slug } }: { params: { slu
   return (
       <>
         <Script
-              dangerouslySetInnerHTML={{
-            __html: `{
-                      "@context": "https://schema.org/",
-                      "@type": "Product",
-                      "name": "${decodeEntities(pluginData?.plugin_name || '')}",
-                      "image": "${pluginData?.logo || ''}",
-                      "offers": ${prices?.length > 1 ? `[
-                          {
-                              "@type": "Offer",
-                              "priceCurrency": "USD",
-                              "price": "${prices[0]?.price}",
-                              "availability": "https://schema.org/OnlineOnly",
-                              "url": "https://10web.io/wordpress-plugin/${pluginData?.plugin_slug}/pricing/"
-                          },
-                          {
-                              "@type": "Offer",
-                              "priceCurrency": "USD",
-                              "price": "${prices[prices?.length - 1]?.price}",
-                              "availability": "https://schema.org/OnlineOnly",
-                              "url": "https://10web.io/wordpress-plugin/${pluginData?.plugin_slug}/pricing/"
-                          }
-                      ]` : prices?.length === 1 ?
-                `[
-                               {
-                                  "@type": "Offer",
-                                  "priceCurrency": "USD",
-                                  "price": "${prices[0]?.price}",
-                                  "availability": "https://schema.org/OnlineOnly",
-                               },
-                            ]` : '[]'}, 
-                      "aggregateRating": {
-                        "@type": "AggregateRating",
-                        "ratingValue": "${calculateRatingSummary(pluginData?.rating_by_stars)?.averageRating}",
-                        "ratingCount": "${reviews?.metadata?.totalCount}",
-                        "bestRating": "5",
-                        "worstRating": "1"
-                      },
-                      "description": "${decodeEntities(pluginData?.short_title || '')}",
-                      "brand": "${contributor?.data[0]?.author_name || ''}"
-                    }`
-          }}/>
+            id="schema-product"
+            type="application/ld+json"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org/",
+                "@type": "Product",
+                name: decodeEntities(pluginData?.plugin_name || ''),
+                image: pluginData?.logo || '',
+                offers: prices?.length > 0
+                    ? prices.map(price => ({
+                      "@type": "Offer",
+                      "priceCurrency": "USD",
+                      "price": price.price,
+                      "availability": "https://schema.org/OnlineOnly",
+                    }))
+                    : [],
+                aggregateRating: {
+                  "@type": "AggregateRating",
+                  "ratingValue": calculateRatingSummary(pluginData?.rating_by_stars)?.averageRating,
+                  "ratingCount": reviews?.metadata?.totalCount,
+                  "bestRating": "5",
+                  "worstRating": "1",
+                },
+                description: decodeEntities(pluginData?.short_title || ''),
+                brand: contributor?.data[0]?.author_name || '',
+              }),
+            }}
+        />
         <div className={styles.layoutContent}>
           <main className={styles.container}>
             <div className={styles.breadcrumb}>
