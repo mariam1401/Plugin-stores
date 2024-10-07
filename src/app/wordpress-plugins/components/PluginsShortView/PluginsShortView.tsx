@@ -67,7 +67,7 @@ export const PluginsShortView = ({
             rating={eachPlugin?.rating!}
             isBlackTheme={isBlackTheme}
             key={eachPlugin?.plugin_id}
-            image={eachPlugin?.logo || '/defaultLogo.png'}
+            image={eachPlugin?.logo ? eachPlugin?.logo : '/defaultLogo.png'}
           />
         ))}
       </div>

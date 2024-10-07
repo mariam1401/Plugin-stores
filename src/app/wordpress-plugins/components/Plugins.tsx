@@ -30,7 +30,7 @@ export const Pluginlist = ({ isLoading, data }) => {
                 isBlackTheme={false}
                 rating={el?.rating!}
                 key={el?.plugin_id}
-                image={el?.logo || '/defaultLogo.png'}
+                image={el?.logo ? el?.logo :'/defaultLogo.png'}
               />
             );
           })}

@@ -33,7 +33,7 @@ export const ViewAlternatives = ({ title, data }: IView) => {
               rating={eachPlugin?.rating!}
               key={eachPlugin?.plugin_id}
               className={styles.plugin}
-              image={eachPlugin?.logo || '/defaultLogo.png'}
+              image={eachPlugin?.logo ? eachPlugin?.logo : '/defaultLogo.png'}
               isBlackTheme
             />
           ))}

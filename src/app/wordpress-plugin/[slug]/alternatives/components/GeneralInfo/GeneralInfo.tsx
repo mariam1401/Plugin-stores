@@ -21,7 +21,7 @@ export default function GeneralInfo({ plugin }: { plugin: IPlugin }) {
       <div className={styles.leftInfo}>
         <div className={styles.pluginInfo}>
           <div className={styles.item}>
-            <img className={styles.logo} src={plugin?.logo || '/defaultLogo.png'} alt="" />
+            <img className={styles.logo} src={plugin?.logo ? plugin.logo : '/defaultLogo.png'} alt="" />
             <div className={styles.infoSection}>
               <div
                 dangerouslySetInnerHTML={{ __html: plugin?.plugin_name || '' }}
