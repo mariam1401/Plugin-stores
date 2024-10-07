@@ -64,9 +64,8 @@ export default async function Post({ params: { plugin, slug } }: { params: { slu
   return (
       <>
         <Script
-            strategy="beforeInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `{
+              dangerouslySetInnerHTML={{
+            __html: `{
                       "@context": "https://schema.org/",
                       "@type": "Product",
                       "name": "${decodeEntities(pluginData?.plugin_name || '')}",
@@ -87,7 +86,7 @@ export default async function Post({ params: { plugin, slug } }: { params: { slu
                               "url": "https://10web.io/wordpress-plugin/${pluginData?.plugin_slug}/pricing/"
                           }
                       ]` : prices?.length === 1 ?
-                            `[
+                `[
                                {
                                   "@type": "Offer",
                                   "priceCurrency": "USD",
@@ -105,8 +104,7 @@ export default async function Post({ params: { plugin, slug } }: { params: { slu
                       "description": "${decodeEntities(pluginData?.short_title || '')}",
                       "brand": "${contributor?.data[0]?.author_name || ''}"
                     }`
-            }}
-        />
+          }}/>
         <div className={styles.layoutContent}>
           <main className={styles.container}>
             <div className={styles.breadcrumb}>
