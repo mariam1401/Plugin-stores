@@ -28,7 +28,7 @@ export const Developer = ({
               isBlackTheme={false}
               rating={el?.rating!}
               key={el?.plugin_id}
-              image={el?.logo ? el?.logo : '/defaultLogo.png'}
+              image={el?.logo ? el?.logo : 'https://plugin-store-assets.s3.amazonaws.com/icon.png'}
             />
           );
         })}

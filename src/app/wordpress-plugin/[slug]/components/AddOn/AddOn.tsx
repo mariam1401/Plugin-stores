@@ -42,7 +42,7 @@ export function AddOn({
       href={`/wordpress-plugin/${slug}`}
       scroll
     >
-      <img className={styles.logo} src={image ? image : '/defaultLogo.png'} alt={name} />
+      <img className={styles.logo} src={image ? image : 'https://plugin-store-assets.s3.amazonaws.com/icon.png'} alt={name} />
       <div
         className={classNames(styles.infoContainer, {
           [styles.isBlackTheme]: isBlackTheme,

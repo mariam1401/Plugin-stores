@@ -69,7 +69,7 @@ export const View = ({ description, winner, title, data, path }: IView) => {
                 rating={eachPlugin?.rating!}
                 key={eachPlugin?.plugin_id}
                 className={styles.plugin}
-                image={eachPlugin?.logo ? eachPlugin?.logo : '/defaultLogo.png'}
+                image={eachPlugin?.logo ? eachPlugin?.logo : 'https://plugin-store-assets.s3.amazonaws.com/icon.png'}
                 isBlackTheme
               />
             ))}
@@ -82,7 +82,7 @@ export const View = ({ description, winner, title, data, path }: IView) => {
                 Category winner:
               </div>
               <div className={styles.winnerName}>
-                <img src={winnerPlugin?.logo ? winnerPlugin?.logo : '/defaultLogo.png'} className={styles.logo} />{' '}
+                <img src={winnerPlugin?.logo ? winnerPlugin?.logo : 'https://plugin-store-assets.s3.amazonaws.com/icon.png'} className={styles.logo} />{' '}
                 <div
                   dangerouslySetInnerHTML={{
                     __html: winnerPlugin?.plugin_name?.slice(0, 13) || '',
@@ -119,7 +119,7 @@ export const View = ({ description, winner, title, data, path }: IView) => {
               name={sortedData[4]?.plugin_name}
               rating={sortedData[4]?.rating!}
               key={sortedData[4]?.plugin_id}
-              image={sortedData[4]?.logo ? sortedData[4]?.logo : '/defaultLogo.png'}
+              image={sortedData[4]?.logo ? sortedData[4]?.logo : 'https://plugin-store-assets.s3.amazonaws.com/icon.png'}
               className={styles.plugin}
               isBlackTheme
             />

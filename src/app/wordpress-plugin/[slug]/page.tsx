@@ -72,27 +72,31 @@ export default async function Post({ params: { plugin, slug } }: { params: { slu
                 "@context": "https://schema.org/",
                 "@type": "Product",
                 name: decodeEntities(pluginData?.plugin_name || ''),
-                image: pluginData?.logo || '',
-                offers: prices?.length > 0
-                    ? prices.map(price => ({
-                      "@type": "Offer",
-                      "priceCurrency": "USD",
-                      "price": price.price,
-                      "availability": "https://schema.org/OnlineOnly",
-                    }))
-                    : [],
-                aggregateRating: {
-                  "@type": "AggregateRating",
-                  "ratingValue": calculateRatingSummary(pluginData?.rating_by_stars)?.averageRating,
-                  "ratingCount": reviews?.metadata?.totalCount,
-                  "bestRating": "5",
-                  "worstRating": "1",
-                },
+                image: pluginData?.logo || 'https://plugin-store-assets.s3.amazonaws.com/icon.png',
+                ...(prices?.length >0 && {
+                  offers:
+                      prices.map(price => ({
+                        "@type": "Offer",
+                        "priceCurrency": "USD",
+                        "price": price.price,
+                        "availability": "https://schema.org/OnlineOnly",
+                      }))
+                }),
+                ...((reviews?.metadata?.totalCount > 0 &&  calculateRatingSummary(pluginData?.rating_by_stars)?.averageRating >0) && {
+                  aggregateRating: {
+                    "@type": "AggregateRating",
+                    "ratingValue": calculateRatingSummary(pluginData?.rating_by_stars)?.averageRating,
+                    "ratingCount": reviews.metadata.totalCount,
+                    "bestRating": "5",
+                    "worstRating": "1",
+                  },
+                }),
                 description: decodeEntities(pluginData?.short_title || ''),
                 brand: contributor?.data[0]?.author_name || '',
               }),
             }}
         />
+
         <div className={styles.layoutContent}>
           <main className={styles.container}>
             <div className={styles.breadcrumb}>

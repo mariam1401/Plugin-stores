@@ -63,7 +63,7 @@ export default function AllAlternatives({ plugin }: { plugin: IPlugin }) {
         {allData?.map((eachItem: any) => (
           <div className={styles.pluginInfo} key={eachItem?.plugin_id}>
             <div className={styles.item}>
-              <img className={styles.logo} src={eachItem?.logo ? eachItem?.logo : '/defaultLogo.png'} alt="" loading="lazy" />
+              <img className={styles.logo} src={eachItem?.logo ? eachItem?.logo : 'https://plugin-store-assets.s3.amazonaws.com/icon.png'} alt="" loading="lazy" />
               <div className={styles.infoSection}>
                 <div
                   dangerouslySetInnerHTML={{

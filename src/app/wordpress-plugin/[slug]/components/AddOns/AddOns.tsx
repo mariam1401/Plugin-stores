@@ -128,7 +128,7 @@ export function AddOns({ morePlugins, title }: IProps) {
                     name={eachPlugin?.plugin_name}
                     rating={eachPlugin?.rating}
                     key={eachPlugin?.plugin_id}
-                    image={eachPlugin?.logo ? eachPlugin?.logo : '/defaultLogo.png'}
+                    image={eachPlugin?.logo ? eachPlugin?.logo : 'https://plugin-store-assets.s3.amazonaws.com/icon.png'}
                   />
                 </SplideSlide>
               );

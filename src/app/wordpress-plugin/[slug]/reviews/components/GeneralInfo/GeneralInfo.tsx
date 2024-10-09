@@ -21,7 +21,7 @@ export default function GeneralInfo({
   return (
     <div className={styles.container}>
       <div className={styles.logoContainer}>
-        <img className={styles.logo} src={plugin?.logo ? plugin?.logo : '/defaultLogo.png'} alt={plugin?.plugin_name || ''} />
+        <img className={styles.logo} src={plugin?.logo ? plugin?.logo : 'https://plugin-store-assets.s3.amazonaws.com/icon.png'} alt={plugin?.plugin_name || ''} />
       </div>
       <div className={styles.info}>
         <div className={styles.firstRow}>

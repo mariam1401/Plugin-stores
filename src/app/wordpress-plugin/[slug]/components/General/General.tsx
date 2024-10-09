@@ -93,7 +93,7 @@ export function General({
           <div className={styles.logoInfo}>
             <img
               className={styles.logo}
-              src={plugin?.logo ? plugin?.logo : '/defaultLogo.png'}
+              src={plugin?.logo ? plugin?.logo : 'https://plugin-store-assets.s3.amazonaws.com/icon.png'}
               height={64}
               width={64}
               alt={plugin?.plugin_name || ''}
