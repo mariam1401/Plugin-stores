@@ -54,12 +54,12 @@ export const PageSearchBox = () => {
   };
   const redirectToTag = (slug?: string) => {
     if (slug) {
-      router.push(`/wordpress-plugins/tag/${slug}`);
+      router.push(`/wordpress-plugins/tag/${slug}/`);
     }
   };
   const redirectToSearchPage = () => {
     if (query) {
-      router.push(`/wordpress-plugins/search/${query}`);
+      router.push(`/wordpress-plugins/search/${query}/`);
     }
   };
 
@@ -156,7 +156,7 @@ export const PageSearchBox = () => {
                       plugins?.data?.length > 0 &&
                       plugins?.data?.map((eachPlugin: IPlugin) => (
                         <Link
-                          href={`/wordpress-plugin/${eachPlugin?.plugin_slug}`}
+                          href={`/wordpress-plugin/${eachPlugin?.plugin_slug}/`}
                           className={style.eachPluginLink}
                           key={eachPlugin?.plugin_slug}
                           onClick={closeResult}

@@ -111,7 +111,7 @@ export function General({
                     <div>
                       <span>By</span>{' '}
                       <a
-                        href={`/wordpress-plugins/profiles/${author[0]?.slug}`}
+                        href={`/wordpress-plugins/profiles/${author[0]?.slug}/`}
                         className={styles.link}
                       >
                         {author[0]?.author_name}

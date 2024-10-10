@@ -26,7 +26,7 @@ export const View = ({ description, winner, title, data, path }: IView) => {
   const router = useRouter();
   const redirectToCategoryPage = () => {
     if (path) {
-      router.push('/wordpress-plugins/performance-optimization');
+      router.push('/wordpress-plugins/performance-optimization/');
     }
   };
 
@@ -103,7 +103,7 @@ export const View = ({ description, winner, title, data, path }: IView) => {
             />
 
             <Link
-              href={`/wordpress-plugin/${winnerPlugin?.plugin_slug}`}
+              href={`/wordpress-plugin/${winnerPlugin?.plugin_slug}/`}
               className={styles.learnMore}
               scroll
             >

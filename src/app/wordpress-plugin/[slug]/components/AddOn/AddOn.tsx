@@ -39,7 +39,7 @@ export function AddOn({
       className={classNames(styles.addOn, className, {
         [styles.isBlackTheme]: isBlackTheme,
       })}
-      href={`/wordpress-plugin/${slug}`}
+      href={`/wordpress-plugin/${slug}/`}
       scroll
     >
       <img className={styles.logo} src={image ? image : 'https://plugin-store-assets.s3.amazonaws.com/icon.png'} alt={name} />

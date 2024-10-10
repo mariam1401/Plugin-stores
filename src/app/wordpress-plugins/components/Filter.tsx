@@ -151,7 +151,7 @@ export const Filter = ({
         return { ...state, [name]: value?.slug };
       });
       //@ts-ignore
-      router.push(`/wordpress-plugins/${value?.slug}`);
+      router.push(`/wordpress-plugins/${value?.slug}/`);
     }
   };
   const handlePhpVersionModal = () => {
@@ -199,9 +199,9 @@ export const Filter = ({
       return newData;
     });
     if (data?.tags?.length > 0) {
-      router.push(`/wordpress-plugins/tag/${data?.tags[0]?.slug}`);
+      router.push(`/wordpress-plugins/tag/${data?.tags[0]?.slug}/`);
     } else {
-      router.push('/wordpress-plugins/all');
+      router.push('/wordpress-plugins/all/');
     }
   };
   const handleSliderValue = (event: any, newValue: number[]) => {
@@ -277,7 +277,7 @@ export const Filter = ({
   const handleTags = (tag?: { slug?: string; tag?: string; id?: string }) => {
     setIsFilter(true);
     if (!data?.category_id && !pathName?.includes('/wordpress-plugins/tag')) {
-      router.push(`/wordpress-plugins/tag/${tag?.slug}`);
+      router.push(`/wordpress-plugins/tag/${tag?.slug}/`);
     } else {
       if (
         data?.tags?.length < 5 &&
@@ -289,7 +289,7 @@ export const Filter = ({
           newData['tags'] = [...newData['tags'], tag];
           //@ts-ignore
           if (!newData['tags']?.length > 0 && !data?.category_id) {
-            router.push('/wordpress-plugins/all');
+            router.push('/wordpress-plugins/all/');
           }
           return newData;
         });
@@ -306,13 +306,13 @@ export const Filter = ({
         );
       }
       if (!(newData['tags']?.length > 0) && !data?.category_id) {
-        router.push('/wordpress-plugins/all');
+        router.push('/wordpress-plugins/all/');
       }
       if (
         pathName?.split('/')[pathName?.length - 1] !== newData['tags'][0] &&
         !data?.category_id
       ) {
-        router.push(`/wordpress-plugins/tag/${newData['tags'][0]?.slug}`);
+        router.push(`/wordpress-plugins/tag/${newData['tags'][0]?.slug}/`);
       }
       return newData;
     });

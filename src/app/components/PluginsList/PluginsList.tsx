@@ -55,7 +55,7 @@ export default function PluginsList({ initialData }: { initialData: Data }) {
 
         {data?.map((eachPlugin) => (
           <Link
-            href={`/wordpress-plugin/${eachPlugin?.plugin_slug}`}
+            href={`/wordpress-plugin/${eachPlugin?.plugin_slug}/`}
             className={styles.eachPlugin}
             key={eachPlugin?.plugin_slug}
             scroll

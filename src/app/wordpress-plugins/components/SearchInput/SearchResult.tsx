@@ -80,7 +80,7 @@ export const SearchResult = ({
                   onClick={() => {
                     onClose?.();
                   }}
-                  href={`/wordpress-plugin/${eachPlugin.plugin_slug}`}
+                  href={`/wordpress-plugin/${eachPlugin.plugin_slug}/`}
                   className={styles.eachPluginLink}
                   key={eachPlugin.plugin_slug}
                   scroll

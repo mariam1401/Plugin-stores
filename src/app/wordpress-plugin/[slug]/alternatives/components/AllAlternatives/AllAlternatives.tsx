@@ -102,7 +102,7 @@ export default function AllAlternatives({ plugin }: { plugin: IPlugin }) {
 
                   {!smallScreen && (
                     <Link
-                      href={`/wordpress-plugin/${eachItem?.plugin_slug}`}
+                      href={`/wordpress-plugin/${eachItem?.plugin_slug}/`}
                       className={styles.learnMore}
                       scroll
                     >
@@ -114,7 +114,7 @@ export default function AllAlternatives({ plugin }: { plugin: IPlugin }) {
             </div>
             {smallScreen && (
               <Link
-                href={`/wordpress-plugin/${eachItem?.plugin_slug}`}
+                href={`/wordpress-plugin/${eachItem?.plugin_slug}/`}
                 className={styles.learnMore}
                 scroll
               >

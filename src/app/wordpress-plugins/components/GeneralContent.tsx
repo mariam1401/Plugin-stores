@@ -159,7 +159,7 @@ export const GeneralContent = ({
         </div>
       )}
       <div className={styles.breadcrumb}>
-        <Link href={`/wordpress-plugins`} scroll>
+        <Link href={`/wordpress-plugins/`} scroll>
           All plugins
         </Link>
         <ChevronRight fontSize="small" />

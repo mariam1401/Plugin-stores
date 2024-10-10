@@ -118,7 +118,7 @@ export default function SearchInput({
 
   const handleCategoryChange = (id: string) => {
     setSelectedCategory(id);
-    router.push(`/wordpress-plugins/${id}`);
+    router.push(`/wordpress-plugins/${id}/`);
     setIsOpened(false);
   };
 

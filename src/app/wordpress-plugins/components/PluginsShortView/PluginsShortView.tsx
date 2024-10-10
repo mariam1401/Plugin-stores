@@ -32,9 +32,9 @@ export const PluginsShortView = ({
   const router = useRouter();
   const redirectToCategoryPage = () => {
     if (path) {
-      router.push(`/wordpress-plugins/${path}`);
+      router.push(`/wordpress-plugins/${path}/`);
     } else {
-      router.push('/wordpress-plugins/all');
+      router.push('/wordpress-plugins/all/');
     }
   };
   return (

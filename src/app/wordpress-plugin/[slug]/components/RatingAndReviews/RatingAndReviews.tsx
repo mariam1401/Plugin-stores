@@ -59,7 +59,7 @@ export function RatingAndReviews({
             {hasMore && (
               <div className={styles.reviewsActions}>
                 <Link
-                  href={`/wordpress-plugin/${plugin?.plugin_slug}/reviews`}
+                  href={`/wordpress-plugin/${plugin?.plugin_slug}/reviews/`}
                   className={styles.reviewsSeeAll}
                   scroll
                 >

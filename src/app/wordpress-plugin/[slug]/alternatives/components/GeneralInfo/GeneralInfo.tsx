@@ -46,7 +46,7 @@ export default function GeneralInfo({ plugin }: { plugin: IPlugin }) {
                 <p className={styles.category}>{plugin?.category?.category}</p>
                 {!smallScreen && (
                   <Link
-                    href={`/wordpress-plugin/${plugin?.plugin_slug}`}
+                    href={`/wordpress-plugin/${plugin?.plugin_slug}/`}
                     className={styles.learnMore}
                     scroll
                   >
@@ -60,7 +60,7 @@ export default function GeneralInfo({ plugin }: { plugin: IPlugin }) {
 
           {smallScreen && (
             <Link
-              href={`/wordpress-plugin/${plugin?.plugin_slug}`}
+              href={`/wordpress-plugin/${plugin?.plugin_slug}/`}
               className={styles.learnMore}
               scroll
             >

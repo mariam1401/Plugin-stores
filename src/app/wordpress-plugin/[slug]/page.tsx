@@ -100,11 +100,11 @@ export default async function Post({ params: { plugin, slug } }: { params: { slu
         <div className={styles.layoutContent}>
           <main className={styles.container}>
             <div className={styles.breadcrumb}>
-              <Link href={'/wordpress-plugins'} scroll>
+              <Link href={'/wordpress-plugins/'} scroll>
                 All plugins
               </Link>
               <ChevronRight fontSize="small" />
-              <Link href={`/wordpress-plugins/${pluginData?.category?.slug}`} scroll>
+              <Link href={`/wordpress-plugins/${pluginData?.category?.slug}/`} scroll>
                 {pluginData?.category?.category}
               </Link>
               <ChevronRight fontSize="small" />

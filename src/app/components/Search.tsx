@@ -109,7 +109,7 @@ export default function Search({
 
   const handleCategoryChange = (id: string) => {
     setSelectedCategory(id);
-    router.push(`/wordpress-plugins/${id}`);
+    router.push(`/wordpress-plugins/${id}/`);
     setIsOpened(false);
   };
 
@@ -129,13 +129,13 @@ export default function Search({
   }, []);
   const redirectToTag = (slug?: string) => {
     if (slug) {
-      router.push(`/wordpress-plugins/tag/${slug}`);
+      router.push(`/wordpress-plugins/tag/${slug}/`);
       setIsOpenedResult(false);
     }
   };
   const redirectToSearchPage = () => {
     if (query) {
-      router.push(`/wordpress-plugins/search/${query}`);
+      router.push(`/wordpress-plugins/search/${query}/`);
     }
   };
   const handleKeyPress = (event: any) => {
@@ -251,7 +251,7 @@ export default function Search({
                       plugins?.data?.length > 0 &&
                       plugins?.data?.map((eachPlugin: IPlugin) => (
                         <Link
-                          href={`/wordpress-plugin/${eachPlugin?.plugin_slug}`}
+                          href={`/wordpress-plugin/${eachPlugin?.plugin_slug}/`}
                           className={style.eachPluginLink}
                           key={eachPlugin?.plugin_slug}
                           onClick={closeResult}

@@ -17,7 +17,7 @@ const Header: FC<PropsWithChildren> = ({ children }) => {
       <div className={styles.content}>
         <span
           onClick={() => {
-            router.push('/wordpress-plugins');
+            router.push('/wordpress-plugins/');
           }}
         >
           <Web10Icon />

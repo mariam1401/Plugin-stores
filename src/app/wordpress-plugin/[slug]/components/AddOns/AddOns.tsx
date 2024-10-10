@@ -33,7 +33,7 @@ export function AddOns({ morePlugins, title }: IProps) {
   const nextRef = useRef(null);
   const backRef = useRef(null);
   const redirectToCategoryPage = () => {
-    router.push('alternatives');
+    router.push('alternatives/');
   };
   const handleNext = () => {
     setCurrentIndex(currentIndex + 1);

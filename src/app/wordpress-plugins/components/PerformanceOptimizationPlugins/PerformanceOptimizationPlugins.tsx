@@ -19,7 +19,7 @@ export default async function PerformanceOptimizationPlugins() {
     <WithBlackBackground>
       <View
         description="Effortlessly discover top-rated plugins tailored to enhance your site, all in one place."
-        path={'/wordpress-plugins/performance-optimization'}
+        path={'/wordpress-plugins/performance-optimization/'}
         title="Performance optimization plugins"
         data={data?.data}
         winner={winner}

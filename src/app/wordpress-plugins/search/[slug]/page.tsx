@@ -35,7 +35,7 @@ export default async function Post({
       <div className={styles.layoutContent}>
         <main className={styles.container}>
           <div className={styles.breadcrumb}>
-            <Link href={'/wordpress-plugins'} scroll>
+            <Link href={'/wordpress-plugins/'} scroll>
               All plugins
             </Link>
             <ChevronRight fontSize="small" />

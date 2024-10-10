@@ -63,18 +63,18 @@ export default async function Post({
       <div className={styles.layoutContent}>
         <main className={styles.container}>
           <div className={styles.breadcrumb}>
-            <Link href={'/wordpress-plugins'} scroll>
+            <Link href={'/wordpress-plugins/'} scroll>
               Home
             </Link>
             <ChevronRight fontSize="small" />
-            <Link href={'/wordpress-plugin'} scroll>
+            <Link href={'/wordpress-plugin/'} scroll>
               Plugins store
             </Link>
             <Link
               dangerouslySetInnerHTML={{
                 __html: pluginData?.plugin_name || '',
               }}
-              href={`/wordpress-plugin/${slug}`}
+              href={`/wordpress-plugin/${slug}/`}
               scroll
             />
             <ChevronRight fontSize="small" />
