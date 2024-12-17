@@ -67,9 +67,6 @@ export default async function Post({
               Home
             </Link>
             <ChevronRight fontSize="small" />
-            <Link href={'/wordpress-plugin/'} scroll>
-              Plugins store
-            </Link>
             <Link
               dangerouslySetInnerHTML={{
                 __html: pluginData?.plugin_name || '',

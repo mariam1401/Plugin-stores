@@ -54,7 +54,7 @@ const LINK_GROUPS = [
   {
     links: [
       {
-        href: 'https://10web.io/ai-website-builder?_gl=1*1mrtsmw*_ga*MTc0MDUwNTQ3MC4xNzE0MTIyMTQ5*_ga_2J827PZZKP*MTcxNDc1MjY2MS4yLjEuMTcxNDc1Mjc2NC4wLjAuMjIyMTExNjI1*_fplc*YVN1OVAzTEJmUFl5YldpdEVvM0FkenVPNE9zUW9ScVgyV0ZBU2FXeWc4WSUyQmxqWXlFTG9rOTB4WkZKbGlvYTZJd3FyVlJjbFFDa294Q1dGMUk4NDlYbHZIc3NJJTJGNmtLRnZiYU5oTWMyQWJhYWVBRjJESUE4blIyN3liSFhkZyUzRCUzRA..',
+        href: 'https://10web.io/ai-website-builder/',
         name: 'AI Website Builder',
       },
       {
@@ -62,11 +62,11 @@ const LINK_GROUPS = [
         name: 'AI Ecommerce',
       },
       {
-        href: 'https://10web.io/automated-wordpress-hosting/',
+        href: 'https://10web.io/managed-wordpress-hosting/',
         name: 'Hosting',
       },
       {
-        href: 'https://10web.io/automated-wordpress-pagespeed-optimization/',
+        href: 'https://10web.io/page-speed-booster/',
         name: 'PageSpeed Booster',
       },
       {
@@ -124,7 +124,7 @@ const LINK_GROUPS = [
   {
     links: [
       {
-        href: 'https://help.10web.io/?_gl=1*owqbh9*_ga*MTc0MDUwNTQ3MC4xNzE0MTIyMTQ5*_ga_2J827PZZKP*MTcxNDc1MjY2MS4yLjEuMTcxNDc1Mjc2NC4wLjAuMjIyMTExNjI1*_fplc*YVN1OVAzTEJmUFl5YldpdEVvM0FkenVPNE9zUW9ScVgyV0ZBU2FXeWc4WSUyQmxqWXlFTG9rOTB4WkZKbGlvYTZJd3FyVlJjbFFDa294Q1dGMUk4NDlYbHZIc3NJJTJGNmtLRnZiYU5oTWMyQWJhYWVBRjJESUE4blIyN3liSFhkZyUzRCUzRA..',
+        href: 'https://help.10web.io/hc/en-us/',
         name: 'Help Center',
       },
       {
