@@ -15,6 +15,7 @@ import getPost from '@/lib/getPost';
 import ChevronRight from './rightIcon.svg';
 
 import styles from './page.module.scss';
+import getMetadata from "@/lib/getMetadata";
 function decodeEntities(encodedString?: string) {
   return he.decode(encodedString || '');
 }
@@ -25,8 +26,10 @@ export async function generateMetadata({
   params: { plugin: IPlugin; slug: string };
 }) {
   let data = plugin;
+  let metadata
   if (!plugin) {
     data = await getPost(slug);
+    metadata = await getMetadata(slug)
   }
   if (!data) {
     return {
@@ -35,7 +38,7 @@ export async function generateMetadata({
   }
   return {
     title: `Alternatives page for ${decodeEntities(data?.plugin_name)}`,
-    description: decodeEntities(data?.short_title),
+    description:metadata[0]?.alternatives_page ? metadata[0]?.alternatives_page :  decodeEntities(data?.short_title),
   };
 }
 export default async function Post({

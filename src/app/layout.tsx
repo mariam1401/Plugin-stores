@@ -17,6 +17,7 @@ const mulish = Mulish({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'WordPress plugins',
+  description:'Find the best WordPress plugins for enhanced functionality, design, and performance. Browse our expert-curated list to optimize your website today.'
 };
 
 export default function RootLayout({

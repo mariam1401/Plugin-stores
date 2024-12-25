@@ -25,7 +25,7 @@ export default function GeneralInfo({
       </div>
       <div className={styles.info}>
         <div className={styles.firstRow}>
-          <p
+          <h1
             dangerouslySetInnerHTML={{
               __html: `${plugin?.plugin_name} ${text || ''}` || '',
             }}

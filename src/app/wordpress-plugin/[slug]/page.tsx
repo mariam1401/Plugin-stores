@@ -22,6 +22,7 @@ import Script from "next/script";
 import {calculateRatingSummary} from "@/lib/getAverageRating";
 import {sortPriceList} from "@/lib/sortPriceList";
 import {IPricing} from "@/@types/plugin";
+import getMetadata from "@/lib/getMetadata";
 
 function decodeEntities(encodedString: string) {
   return he.decode(encodedString || '');
@@ -29,14 +30,16 @@ function decodeEntities(encodedString: string) {
 
 export async function generateMetadata({ params: { plugin, slug } }: { params: { slug: string; plugin: any } }) {
   let data = plugin;
+  let metadata
   if (!plugin) {
     data = await getPost(slug);
+    metadata = await getMetadata(slug)
   }
   if (!data) {
     return { title: 'Plugin Not Found' };
   }
   return {
-    description: decodeEntities(data?.short_title),
+    description:metadata[0]?.inner_page ? metadata[0]?.inner_page : decodeEntities(data?.short_title),
     title: decodeEntities(data?.plugin_name),
   };
 }
