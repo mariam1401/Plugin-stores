@@ -145,15 +145,15 @@ const LINK_GROUPS = [
                           name: 'Press Kit',
                       },
                       {
-                          href: 'https://help.10web.io/hc/en-us/articles/360028017772-10Web-Public-Roadmap?_gl=1%2A1o3ipwm%2A_gcl_au%2AMTU5MzY4MjM3NC4xNzM0MDg2NDYy%2AFPAU%2AMTMxOTk4MjU1LjE3MzQwODYyNzI.%2A_ga%2AMTcyNjcwNzA5OC4xNzM0MDg2NDYy%2A_ga_2J827PZZKP%2AMTczNjI1MzY2NC4xMS4xLjE3MzYyNTQ4NDMuMC4wLjk5Njk5MzAxNQ..%2A_fplc%2ARUdudGhBTjV2NHdld3J3U2tmZU5DZWlzaGZhQXlYSHI4NyUyQiUyQktUV0M4aDBKd0tGWU9kWVVncDIlMkZGdFdQcENSS0lnVnUyODBiJTJCTFlWTzJiM1BGTDFtRG9zdFdoMSUyRkZyNHJ1cVFDOVp6N0R5cmh4WjBUenJzUGlURW1CYklidyUzRCUzRA../',
+                          href: 'https://help.10web.io/hc/en-us/articles/360028017772-10Web-Public-Roadmap/',
                           name: 'Public Roadmap',
                       },
                       {
-                          href: 'https://help.10web.io/hc/en-us?_gl=1*xzh9qi*_gcl_au*MTU5MzY4MjM3NC4xNzM0MDg2NDYy*FPAU*MTMxOTk4MjU1LjE3MzQwODYyNzI.*_ga*MTcyNjcwNzA5OC4xNzM0MDg2NDYy*_ga_2J827PZZKP*MTczNjI1MzY2NC4xMS4xLjE3MzYyNTQ4NDcuMC4wLjk5Njk5MzAxNQ..*_fplc*NmRQajJjeERCT2JlNld5ajBjYmVQVVFzck1oU2xGcEc2OG1wTjElMkZIdHA3SE5oNmlINyUyRlJKRUtBZkJKZW1JRlBYaEZEY3haZTdiNFp6ZGpoRjJsbHhBTEFPOGdRMXE2MkRCYTdIYVR1a3M5ejMlMkYlMkJXaTBRQzFwemVSd1hEemclM0QlM0Q./',
+                          href: 'https://help.10web.io/hc/en-us/',
                           name: 'Help Center',
                       },
                       {
-                          href: 'https://help.10web.io/hc/en-us/community/topics?_gl=1*ti2dgl*_gcl_au*MTU5MzY4MjM3NC4xNzM0MDg2NDYy*FPAU*MTMxOTk4MjU1LjE3MzQwODYyNzI.*_ga*MTcyNjcwNzA5OC4xNzM0MDg2NDYy*_ga_2J827PZZKP*MTczNjI1MzY2NC4xMS4xLjE3MzYyNTQ4NzguMC4wLjk5Njk5MzAxNQ..*_fplc*c2JtUENWSHlzRm8yOFluMGxTRUJTQmpkJTJGNWN4d0s1bHhORVNwRW9zTjJnN3hZMFd3eUdBQiUyRmMlMkI1Q0p5YjlKcE5Zb1klMkJQNEVTYW9YR0l6dSUyQlhOMCUyQmp6ODJFZ21LSHhheUpZZUNIWmZlam9QU1o3TFptelpEUEdla1dVcFlBJTNEJTNE/',
+                          href: 'https://help.10web.io/hc/en-us/community/topics/',
                           name: 'Submit Your Idea',
                       },
                   ]
@@ -168,36 +168,36 @@ const LINK_GROUPS = [
                   title:'COMPANY',
                   data:[
                       {
-                          href: 'https://10web.io/ai-website-builder/',
+                          href: 'https://10web.io/about-us/',
                           name: 'About Us',
                       },
                       {
-                          href: 'https://10web.io/ai-ecommerce-website-builder/',
+                          href: 'https://10web.io/affiliates/',
                           name: 'Affiliates',
                       },
                       {
-                          href: 'https://10web.io/wordpress-ai-builder/',
+                          href: 'https://jobs.10web.io/cc5fe0ae254f42deb69a74c6e97da554/',
                           name: 'Careers'
                       },
                       {
-                          href: 'https://10web.io/managed-wordpress-hosting/',
+                          href: 'https://10web.io/customer-care-support/',
                           name: 'Contact Us',
                       },
                       {
-                          href: 'https://10web.io/dedicated-hosting/',
+                          href: 'https://10web.io/pricing-platform/',
                           name: 'Pricing',
                       },
                       {
-                          href: 'https://10web.io/vps-hosting/',
+                          href: 'https://10web.io/abuse/',
                           name: 'Report Abuse',
                       },
                       {
-                          href: 'https://10web.io/buddyboss-hosting/',
+                          href: 'https://status.10web.io/',
                           name: 'System Status',
                       },
                       {
-                          href: 'https://10web.io/buddyboss-hosting/',
-                          name: 'Legal and compliance center',
+                          href: 'https://10web.io/privacy-policy/',
+                          name: 'Legal & Compliance Center',
                       },
                   ]
               }
