@@ -79,7 +79,7 @@ const LINK_GROUPS = [
                   data:[
                       {
                           href: 'https://10web.io/ai-business-name-generator/',
-                          name: 'AI Business Name Generator',
+                          name: 'Business Name Generator',
                       },
                       {
                           href: 'https://10web.io/domain-name/',
