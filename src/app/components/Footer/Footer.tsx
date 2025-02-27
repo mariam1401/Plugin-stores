@@ -78,7 +78,7 @@ const LINK_GROUPS = [
                   title:'BUSINESS TOOLS',
                   data:[
                       {
-                          href: 'https://10web.io/ai-business-name-generator/',
+                          href: 'https://10web.io/business-name-generator/',
                           name: 'Business Name Generator',
                       },
                       {
